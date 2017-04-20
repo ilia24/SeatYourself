@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  opentime: 2017-04-20 15:18:47
+  closetime: 2017-04-20 15:18:47
+
+two:
+  name: MyString
+  opentime: 2017-04-20 15:18:47
+  closetime: 2017-04-20 15:18:47
