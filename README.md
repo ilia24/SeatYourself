@@ -96,6 +96,7 @@ Category
 Now that you have a good idea of what you're going to build, you need to decide the order in which you will build all the parts. How do you do that?
 
 Think about dependencies. Creating a Reservation is dependent on the existence of a Restaurant and a User. Therefore, you will first create the Restaurant and User models, and then add the Reservations model
+
 A good tactic is to plan your application in steps, such that each step is a minimally useful website. So if you create a Restaurant model, then create a RestaurantController and set up the CRUD (7 RESTful actions) so that you can add and view Restaurants before you create the User model. You don't want to create two models, before you have one model that does anything.
 
 
@@ -128,10 +129,12 @@ A user's password_confirmation must match password
 An unsafe user password should not authenticate
 A safe user password should authenticate
 Two users cannot have the same email
-Category Tests
+
+### Category Tests
 
 A category should have a name
-Restaurant Tests
+
+### Restaurant Tests
 
 A restaurant must have a name
 A restaurant must have an address
