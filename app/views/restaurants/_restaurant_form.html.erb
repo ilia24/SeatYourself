@@ -1,0 +1,29 @@
+<div class="form_container">
+  <h2> Create a Restaurant </h2>
+
+  <%= form_for restaurant do |f| %>
+
+  <div id="open_time">
+    <p>
+    <%= f.label :opentime %>
+    <br><%= f.time_field :opentime %>
+    </p>
+  </div>
+
+  <div id="close_time">
+    <p>
+    <%= f.label :closetime %>
+    <br>
+    <%= f.time_field :closetime %>
+    </p>
+  </div>
+
+  <div class="submit">
+    <p>
+      <%= f.submit %>
+    </p>
+  </div>
+
+<%end%>
+
+</div>
