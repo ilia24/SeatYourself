@@ -4,4 +4,5 @@ class User < ApplicationRecord
   validates :name, :email, :password, presence: true
   has_many :reservations
   has_many :restaurants, through: :reservations
+  has_many :reviews
 end
