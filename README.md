@@ -52,11 +52,11 @@ A restaurant can only be open from 11am - 8pm, 7 days a week.
 A restaurant can only hold 100 people in any given time slot.
 A reservation can be for a party of 2 to 20 people.
 
-###Step 2
+### Step 2
 
 Now that we have a good understanding to the above questions, we can refine our plans and make them more concrete. Here we want to
 
-create mockups
+### create mockups
 draw out what entities (models in Rails) we will need and how they will relate to each other (associations in Rails)
 Mockups
 
@@ -73,21 +73,9 @@ As part of the proposal. – If the client is huge, lucrative, prestigious, and 
 Remember that your job depends on this phase. – Clients will appreciate your work. This is important how you can often win a client’s approval through your mockup design. If your client was happy for what you’ve done with mockup design, the next phase of this job will be very easy for you
 Here are a couple of example mockups to get you started:
 
-Original Twitter Concept
-
-Original Twitter Concept
-
-Vimeo Profile Page Idea
-
-Vimeo Profile Page Idea
-
-5 Years of Firefox
-
-5 Years of Firefox
-
 Create mockups for Seat Yourself based on the user stories and translate them into static HTML pages that look like a fully functioning application.
 
-Entity-relationship (ER) Modeling
+### Entity-relationship (ER) Modeling
 
 This is a fancy way of saying that you need to decide what entities (models in Rails) you will want and how they will relate to each other (associations in Rails). An ER model is an abstract way of describing a database. Diagrams created to design these entities and relationships are called entity–relationship diagrams or ER diagrams. Wikipedia
 
@@ -103,7 +91,7 @@ Reservation
 Category
 
 
-###Step 3
+### Step 3
 
 Now that you have a good idea of what you're going to build, you need to decide the order in which you will build all the parts. How do you do that?
 
@@ -111,27 +99,27 @@ Think about dependencies. Creating a Reservation is dependent on the existence o
 A good tactic is to plan your application in steps, such that each step is a minimally useful website. So if you create a Restaurant model, then create a RestaurantController and set up the CRUD (7 RESTful actions) so that you can add and view Restaurants before you create the User model. You don't want to create two models, before you have one model that does anything.
 
 
-##Testing Your Rails App
+## Testing Your Rails App
 
 We realize that you have learned a large number of new concepts in a short amount of time and are trying to tackle a difficult problem with no clearly defined solution. Ideally this problem would be solved through a process of Test Driven Development, but we think it is more important to understand the basics of the application before you get comfortable with the TDD workflow. We will use a Verification Testing methodology to check that the application functions as expected.
 
-###Complete the following
+### Complete the following
 
 We would like you to now be able to lean against your tests when refactoring your code, but in order to do so you will need to write at least the following tests.
 
-###Setting up your factories.
+### Setting up your factories.
 
 Create a factory for a category
 Create a factory for a user
 Create a factory for a restaurant, if it belongs to anything, please make that association in your factory
 Create a factory for a reservation, if it belongs to anything, please make that association in your factory
 
-###Reservation Tests
+### Reservation Tests
 
 When a restaurant is full, it should not be available for reservations
 A user should not be able to make a reservation outside of operating hours
 
-###User Tests
+### User Tests
 
 A user's name is required
 A user's email is required
