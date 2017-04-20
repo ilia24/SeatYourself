@@ -1,6 +1,6 @@
 # SeatYourself (An opentable clone)
 
-* As a user...
+## As a user...
 
 ...I am presented with a list of restaurants on the homepage.
 ...I can sign up, login, and logout.
@@ -13,11 +13,11 @@ Writing code is only one part of software development. As projects get larger, y
 
 The following steps are considered to be pretty useful when it comes to planning and modelling your application.
 
-Planning Your Project
+## Planning Your Project
 
 This is the first project you're working on that you might not be able to finish. Often in software, there is more to do than there is time. We must therefore learn to assess and prioritize, and in some cases, make sacrifices.
 
-Step 1
+### Step 1
 
 We'll want to:
 
@@ -28,7 +28,7 @@ Understand our constraints, e.g. when the project must be completed, what the bu
 Decide on what features are absolutely necessary versus optional
 A good philosophy is, after understanding the problem well, to write the least amount of code to meet a given set of requirements and once those requirements are met, ask if the product owner would like to add more functionality. This is a much more focused approach than guessing what functionality they might want in the future. You would be surprised at how much information is lost in translation from one person to the next.
 
-User Stories
+### User Stories
 
 At this stage, a useful tool is to write user stories. Here are some user stories we might write for Seat Yourself.
 
@@ -51,7 +51,8 @@ As a visitor, I would like to be able to view restaurants based on their cuisine
 A restaurant can only be open from 11am - 8pm, 7 days a week.
 A restaurant can only hold 100 people in any given time slot.
 A reservation can be for a party of 2 to 20 people.
-Step 2
+
+###Step 2
 
 Now that we have a good understanding to the above questions, we can refine our plans and make them more concrete. Here we want to
 
@@ -100,31 +101,37 @@ User
 Restaurant
 Reservation
 Category
-Step 3
+
+
+###Step 3
 
 Now that you have a good idea of what you're going to build, you need to decide the order in which you will build all the parts. How do you do that?
 
 Think about dependencies. Creating a Reservation is dependent on the existence of a Restaurant and a User. Therefore, you will first create the Restaurant and User models, and then add the Reservations model
 A good tactic is to plan your application in steps, such that each step is a minimally useful website. So if you create a Restaurant model, then create a RestaurantController and set up the CRUD (7 RESTful actions) so that you can add and view Restaurants before you create the User model. You don't want to create two models, before you have one model that does anything.
-Testing Your Rails App
+
+
+##Testing Your Rails App
 
 We realize that you have learned a large number of new concepts in a short amount of time and are trying to tackle a difficult problem with no clearly defined solution. Ideally this problem would be solved through a process of Test Driven Development, but we think it is more important to understand the basics of the application before you get comfortable with the TDD workflow. We will use a Verification Testing methodology to check that the application functions as expected.
 
-Complete the following
+###Complete the following
 
 We would like you to now be able to lean against your tests when refactoring your code, but in order to do so you will need to write at least the following tests.
 
-Setting up your factories.
+###Setting up your factories.
 
 Create a factory for a category
 Create a factory for a user
 Create a factory for a restaurant, if it belongs to anything, please make that association in your factory
 Create a factory for a reservation, if it belongs to anything, please make that association in your factory
-Reservation Tests
+
+###Reservation Tests
 
 When a restaurant is full, it should not be available for reservations
 A user should not be able to make a reservation outside of operating hours
-User Tests
+
+###User Tests
 
 A user's name is required
 A user's email is required
