@@ -3,6 +3,13 @@
 
   <%= form_for restaurant do |f| %>
 
+  <div id="name">
+    <p>
+    <%= f.label :name %>
+    <br><%= f.text_field :name %>
+    </p>
+  </div>
+
   <div id="open_time">
     <p>
     <%= f.label :opentime %>
