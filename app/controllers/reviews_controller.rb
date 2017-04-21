@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   before_action :ensure_logged_in, only: [:create, :destroy]
-  before_action :load_product
+  before_action :load_restaurant
 
 
   def show
@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       flash[:notice] = "Review posted succesfully!"
-      redirect_to restaurants_url
+      redirect_to restaurant_path(@restaurant)
     else
       flash[:alert] = "Review NOT posted"
       render 'restaurants/show'
@@ -31,7 +31,7 @@ class ReviewsController < ApplicationController
 
   end
 
-  def load_product
-    @product = Product.find(params[:restaurant_id])
+  def load_restaurant
+    @restaurant = Restaurant.find(params[:restaurant_id])
   end
 end

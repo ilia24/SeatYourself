@@ -3,24 +3,19 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
 
   def new
     @restaurant = Restaurant.new
-
   end
 
   def index
     @restaurants = Restaurant.all
   end
 
-
-
     def show
       @restaurant = Restaurant.find(params[:id])
-
       if current_user
         @review = @restaurant.reviews.build
       end
+      @reservations = Reservation.all
     end
-
-
 
     def create
       @restaurant = Restaurant.new(restaurant_params)
