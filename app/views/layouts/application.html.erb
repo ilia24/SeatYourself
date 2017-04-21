@@ -11,20 +11,33 @@
   <body>
 
     <nav>
-      
-    </nav>
-    <% if flash[:notice] %>
-      <p id="notice"><%= flash[:notice] %></p>
-    <% end %>
-    <% if flash[:alert] %>
-      <p id="alert"><%= flash[:alert] %></p>
-    <% end %>
 
-    <% if current_user %>
-        Signed in as: <%= current_user.email %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
-        <% else %>
-        <%= link_to 'Log in', new_session_path %> or <%= link_to 'Sign Up', new_user_path %>
-    <%end%>
+      <div class="logo">
+        <a href="/"><%= image_tag ("seat-yourself-logo.svg")%></a>
+      </div>
+
+      <div class="nav_links">
+        <a href="#">BROWSE</a>
+
+        <% if flash[:notice] %>
+          <p id="notice"><%= flash[:notice] %></p>
+        <% end %>
+        <% if flash[:alert] %>
+          <p id="alert"><%= flash[:alert] %></p>
+        <% end %>
+
+        <% if current_user %>
+            Signed in as: <%= current_user.email %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
+            <% else %>
+            <%= link_to 'LOG IN', new_session_path %>
+            <%= link_to 'SIGN UP', new_user_path %>
+        <%end%>
+
+      </div>
+
+    </nav>
+
+
 
     <%= yield %>
   </body>
