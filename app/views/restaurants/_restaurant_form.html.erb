@@ -1,7 +1,7 @@
 <div class="form_container">
 
   <%= form_for restaurant do |f| %>
-
+<%my_time = Time.now + 5.days + 7.hours + 3.minutes + 14.seconds%>
   <div id="name">
     <p>
     <%= f.label :name %>
@@ -12,15 +12,14 @@
   <div id="open_time">
     <p>
     <%= f.label :opentime %>
-    <br><%= f.time_field :opentime %>
+    <br><%= f.time_select 'opentime', {ampm: true, minute_step: 30} %>
     </p>
   </div>
 
   <div id="close_time">
     <p>
     <%= f.label :closetime %>
-    <br>
-    <%= f.time_field :closetime %>
+    <br><%= f.time_select 'closetime', {ampm:true, minute_step: 30}  %>
     </p>
   </div>
 
