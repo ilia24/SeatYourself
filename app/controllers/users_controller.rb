@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:notice] = "Signed up!"
-      #redirect_to restaurants_url
+      redirect_to restaurants_url
     else
       render :new
     end
@@ -17,6 +17,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :contact_number, :password, :password_confirmation)  
+    params.require(:user).permit(:name, :email, :contact_number, :password, :password_confirmation)
   end
 end
