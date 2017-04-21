@@ -17,7 +17,8 @@
       </div>
 
       <div class="nav_links">
-        <a href="restaurants/">BROWSE</a>
+
+        <a href="restaurants#index">BROWSE</a>
 
         <% if flash[:notice] %>
           <p id="notice"><%= flash[:notice] %></p>
@@ -27,7 +28,7 @@
         <% end %>
 
         <% if current_user %>
-            Signed in as: <%= current_user.email %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
+            Signed in as: <%= current_user.name %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
             <% else %>
             <%= link_to 'LOG IN', new_session_path %>
             <%= link_to 'SIGN UP', new_user_path %>
