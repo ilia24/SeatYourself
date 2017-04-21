@@ -2,6 +2,7 @@
 
 <% if current_user %>
 
+
 <%= form_for([@restaurant, @reservation]) do |f| %>
 <p>
 <%= f.label :date %>
@@ -13,10 +14,11 @@
 <%= f.time_select 'time', {ampm:true, minute_step: 30} %>
 </p>
 
-<p>
-  <%= f.submit 'Seat Yourself!' %>
-</p>
-<%end%>
+
+    <p>
+      <%= f.submit 'Seat Yourself!' %>
+    </p>
+  <%end%>
 
 
 <% end %>
