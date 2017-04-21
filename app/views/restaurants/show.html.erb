@@ -14,8 +14,7 @@
       <br>
       <% if review.user != nil %>
        <em> by <%=review.user.name %> </em>
-       Added on: <%= review.created_at %>
-       Liked by: <%= review.liked_by %> Disliked by: <%= review.disliked_by %>
+       Added on: <%= review.created_at.strftime("%Y-%m-%d %I:%M %p") %>
        <%end %>
     </p>
   <%end%>
@@ -37,16 +36,16 @@
      </div>
    <% end %>
 
-<p>
-<%= f.label :comment %>
-<%= f.text_area :comment %>
-</p>
-<p>
-<%= f.submit %>
-</p>
-<% end %>
+    <p>
+    <%= f.label :comment %>
+    <%= f.text_area :comment %>
+    </p>
+    <p>
+    <%= f.submit %>
+    </p>
+    <% end %>
 
-<% else %>
-<p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review
-</p>
-<% end %>
+    <% else %>
+    <p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review
+    </p>
+    <% end %>
