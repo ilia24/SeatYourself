@@ -1,7 +1,7 @@
 <div class="form_container">
 
   <%= form_for restaurant do |f| %>
-<%my_time = Time.now + 5.days + 7.hours + 3.minutes + 14.seconds%>
+
   <div id="name">
     <p>
     <%= f.label :name %>
@@ -22,6 +22,12 @@
     <br><%= f.time_select 'closetime', {ampm:true, minute_step: 30}  %>
     </p>
   </div>
+
+  <p>
+  <%= f.label :image %>
+  <br><%= f.url_field :image_url %>
+  </p>
+</div>
 
   <div class="submit">
     <p>
