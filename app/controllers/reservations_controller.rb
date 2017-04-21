@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+
   before_action :load_reservation
   before_action :ensure_logged_in, only: [:new, :create, :destroy, :edit, :destroy, :update]
 
@@ -51,7 +52,5 @@ class ReservationsController < ApplicationController
   def load_reservation
    @product = Rerservation.find(params[:Reservation_id])
   end
-
-
 
 end
