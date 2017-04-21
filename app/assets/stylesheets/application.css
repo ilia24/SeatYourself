@@ -218,3 +218,7 @@ input[type=tel] {
   position: absolute;
   right: 0;
 }
+
+.field_with_errors {
+  display: inline;
+}
