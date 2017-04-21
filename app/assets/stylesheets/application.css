@@ -2,7 +2,6 @@ html {
   font-family: "Raleway", "Gotham", "Helvetica", sans-serif;
   margin: 0;
   height: 100%;
-
 }
 
 body {
@@ -39,6 +38,82 @@ h1 {
   font-weight: 500;
   letter-spacing: 8px;
   margin: 0;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  text-align: left;
+}
+
+label {
+  color: #95989A;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+}
+
+input[type=text] {
+  width: 400px;
+  border: 0;
+  padding-top: 12px;
+  font-size: 24px;
+  padding-bottom: 12px;
+  border-bottom: solid 1px #dfdfdf;
+}
+
+input[type=password] {
+  width: 400px;
+  border: 0;
+  padding-top: 12px;
+  font-size: 24px;
+  padding-bottom: 12px;
+  border-bottom: solid 1px #dfdfdf;
+}
+
+input[type=email] {
+  width: 400px;
+  border: 0;
+  padding-top: 12px;
+  font-size: 24px;
+  padding-bottom: 12px;
+  border-bottom: solid 1px #dfdfdf;
+}
+
+input[type=tel] {
+  width: 400px;
+  border: 0;
+  padding-top: 12px;
+  font-size: 24px;
+  padding-bottom: 12px;
+  border-bottom: solid 1px #dfdfdf;
+}
+
+.button_reg {
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+  background-color: #262626;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  letter-spacing: 2px;
+  border: 0;
 }
 
 .nav_links {
@@ -99,10 +174,47 @@ h1 {
   height: 100%;
 }
 
-/* LOG IN */
+/* LOG IN & SIGN UP*/
 
-.login_container {
-  max-width: 800px;
+.log_sign_container {
+  position: relative;
+  max-width: 900px;
   text-align: center;
   margin: auto;
+  top: 40%;
+  left: 0%;
+  transform:translate(0%, -50%);
+  -webkit-transform:translate(0%, -40%);
+}
+
+.log_sign_wrapper {
+  display: inline-block;
+}
+
+.log_sign_field {
+  width: 100%
+}
+
+.log_sign_container h2 {
+  padding-bottom: 24px;
+}
+
+.log_sign_container input[type=submit] {
+  display: inline-block;
+  float: right;
+  margin-top: 12px;
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+  background-color: #262626;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  letter-spacing: 2px;
+  border: 0;
+}
+
+.error_messages {
+  position: absolute;
+  right: 0;
 }

@@ -1,21 +1,35 @@
-<div class="login_container">
-  
-<h1>LOG IN1</h1>
+<div class="log_sign_container">
 
-<%= form_tag sessions_path do %>
-<p>
-  <%= label_tag :email %>
-  <%= text_field_tag :email, params[:email] %>
-</p>
+  <h2>LOG IN</h2>
 
-<p>
-<%= label_tag :password %>
-<%= password_field_tag :password %>
-</p>
-<p>
-<%= submit_tag 'Enter' %>
-</p>
+  <div class="log_sign_wrapper">
 
-<%end %>
+    <ul>
+      <%= form_tag sessions_path do %>
+      <li>
+        <p>
+          <%= label_tag :email %>
+          <br>
+          <%= text_field_tag :email, params[:email] %>
+        </p>
+      </li>
+      <li>
+        <p>
+          <%= label_tag :password %>
+          <br>
+          <%= password_field_tag :password %>
+        </p>
+      </li>
+      <li>
+        <p>
+          <%= submit_tag 'ENTER', class: 'button_reg' %>
+        </p>
+      </li>
+
+      <%end %>
+
+    </ul>
+
+  </div>
 
 </div>
