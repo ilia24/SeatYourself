@@ -54,6 +54,6 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
 
   private
     def restaurant_params
-      params.require(:restaurant).permit(:name, :opentime, :closetime)
+      params.require(:restaurant).permit(:name, :opentime, :closetime, :image_url)
     end
 end

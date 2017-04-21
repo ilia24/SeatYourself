@@ -6,6 +6,10 @@
       <h2><%= link_to "#{restaurant.name}", restaurant %></h2>
     </div>
 
+    <div class= "restaurant_image">
+      <img src="<%="#{restaurant.image_url}"%>">
+    </div>  
+
     <br>
     Opening time:<%= restaurant.opentime %>
     <br>
