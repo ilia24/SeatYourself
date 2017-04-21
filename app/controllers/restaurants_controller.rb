@@ -8,6 +8,7 @@ class RestaurantsController < ApplicationController
       @restaurant = Restaurant.find(params[:id])
 
       if current_user
+        @review = @restaurant.reviews.build
       end
     end
 
