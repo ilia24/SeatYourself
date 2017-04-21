@@ -1,7 +1,7 @@
 <h1> <%= @restaurant.name %> </h1>
 
 <p>
-  <%= link_to 'Back to all restaurants', restaurant_path %>
+  <%= link_to 'Back to all restaurants', restaurants_path %>
 </p>
 
 <%= render 'single_restaurant', restaurant: @restaurant %>

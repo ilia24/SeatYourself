@@ -1,7 +1,13 @@
 <div class="form_container">
-  <h2> Create a Restaurant </h2>
 
   <%= form_for restaurant do |f| %>
+
+  <div id="name">
+    <p>
+    <%= f.label :name %>
+    <br><%= f.time_field :name %>
+    </p>
+  </div>
 
   <div id="open_time">
     <p>
