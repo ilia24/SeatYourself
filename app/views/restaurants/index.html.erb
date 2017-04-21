@@ -1,1 +1,11 @@
-askdalskdjalsd
+<h1>Restaurants index </h1>
+
+<main class="index_main">
+  <ul id="restaurant_grid">
+    <% @restaurants.each do |current_rest| %>
+      <li class="restaurant_container">
+        <%= render 'single_restaurant', restaurant: current_rest %>
+      </li>
+    <% end %>
+  </ul>
+</main>
