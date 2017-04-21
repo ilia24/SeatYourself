@@ -98,3 +98,11 @@ h1 {
   text-align: center;
   height: 100%;
 }
+
+/* LOG IN */
+
+.login_container {
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+}
