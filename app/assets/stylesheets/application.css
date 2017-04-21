@@ -41,6 +41,15 @@ h1 {
   margin: 0;
 }
 
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  text-align: left;
+}
+
 .nav_links {
   position: absolute;
   right: 50px;
@@ -110,5 +119,5 @@ h1 {
 }
 
 .log_sign_wrapper {
-  
+  display: inline-block;
 }
