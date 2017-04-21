@@ -86,6 +86,24 @@ input[type=password] {
   border-bottom: solid 1px #dfdfdf;
 }
 
+input[type=email] {
+  width: 400px;
+  border: 0;
+  padding-top: 12px;
+  font-size: 24px;
+  padding-bottom: 12px;
+  border-bottom: solid 1px #dfdfdf;
+}
+
+input[type=tel] {
+  width: 400px;
+  border: 0;
+  padding-top: 12px;
+  font-size: 24px;
+  padding-bottom: 12px;
+  border-bottom: solid 1px #dfdfdf;
+}
+
 .button_reg {
   font-size: 16px;
   font-weight: 300;
@@ -156,14 +174,17 @@ input[type=password] {
   height: 100%;
 }
 
-/* LOG IN */
+/* LOG IN & SIGN UP*/
 
 .log_sign_container {
   position: relative;
-  max-width: 800px;
+  max-width: 900px;
   text-align: center;
   margin: auto;
-  top: 25vh;
+  top: 40%;
+  left: 0%;
+  transform:translate(0%, -50%);
+  -webkit-transform:translate(0%, -40%);
 }
 
 .log_sign_wrapper {
@@ -182,4 +203,18 @@ input[type=password] {
   display: inline-block;
   float: right;
   margin-top: 12px;
+  font-size: 16px;
+  font-weight: 300;
+  color: white;
+  background-color: #262626;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  letter-spacing: 2px;
+  border: 0;
+}
+
+.error_messages {
+  position: absolute;
+  right: 0;
 }

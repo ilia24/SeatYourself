@@ -1,45 +1,65 @@
-<h1>Sign Up</h1>
+<div class="log_sign_container">
 
-<%= form_for @user do |f| %>
+  <h2>SIGN UP</h2>
 
-<% if @user.errors.any? %>
-  <div class="error_messages">
-    <h2>Form is invalid</h2>
+  <div class="log_sign_wrapper">
+
     <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <%= form_for @user do |f| %>
+      <% if @user.errors.any? %>
+        <div class="error_messages">
+          <h2>Form is invalid</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
       <% end %>
-    </ul>
+      <li>
+        <p>
+          <%= f.label :name %>
+
+          <%= f.text_field :name %>
+        </p>
+      </li>
+      <li>
+        <p>
+          <%= f.label :email %>
+
+          <%= f.email_field :email %>
+        </p>
+      </li>
+      <li>
+        <p>
+          <%= f.label :contact_number %>
+          <br>
+          <%= f.telephone_field :contact_number %>
+        </p>
+      </li>
+      <li>
+        <p>
+          <%= f.label :password %>
+
+          <%= f.password_field :password %>
+        </p>
+      </li>
+      <li>
+        <p>
+          <%= f.label :password_confirmation %>
+          <br>
+          <%= f.password_field :password_confirmation %>
+        </p>
+      </li>
+      <li>
+        <p>
+          <%= f.submit "SIGN UP"  %>
+        </p>
+      </li>
+
+      <%end%>
+      </ul>
+
   </div>
-<% end %>
 
-<p>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</p>
-
-<p>
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-</p>
-
-<p>
-  <%= f.label :contact_number %>
-  <%= f.telephone_field :contact_number %>
-</p>
-
-<p>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-</p>
-
-<p>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-</p>
-
-<p>
-  <%= f.submit %>
-</p>
-
-<%end%>
+</div>
