@@ -101,8 +101,14 @@ h1 {
 
 /* LOG IN */
 
-.login_container {
+.log_sign_container {
+  position: relative;
   max-width: 800px;
   text-align: center;
   margin: auto;
+  top: 30%;
+}
+
+.log_sign_wrapper {
+  
 }
