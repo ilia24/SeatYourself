@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
 
-  before_action :load_reservation
+  before_action :load_restaurant
   before_action :ensure_logged_in, only: [:new, :create, :destroy, :edit, :destroy, :update]
 
   def show
@@ -12,10 +12,10 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = @restaurant.reservation.build(reservation_params)
+    @reservation = @restaurant.reservations.build(reservation_params)
     @reservation.user = current_user
     if @reservation.save
-      redirect_to restaurant_path, notice: 'Reservation booked successfully'
+      redirect_to restaurant_path(@restaurant), notice: 'Reservation booked successfully'
     else
       render :new
     end
@@ -28,7 +28,7 @@ class ReservationsController < ApplicationController
   def updated
     @reservation = Reservation.find(params[:id])
     if @reservation.update_attributes(reservation_params)
-      redirect_to restaurant_reservation_path
+      redirect_to restaurant_reservation_path(@reservation)
     else
       render :edit
     end
@@ -49,8 +49,8 @@ class ReservationsController < ApplicationController
     params.require(:reservation).permit(:user_id, :restaurant_id, :time, :date)
   end
 
-  def load_reservation
-   @product = Rerservation.find(params[:Reservation_id])
+  def load_restaurant
+   @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
 end
