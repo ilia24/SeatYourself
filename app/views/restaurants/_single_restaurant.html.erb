@@ -11,9 +11,9 @@
     </div>
 
     <br>
-    Opening time: <%= restaurant.opentime.strftime("%I:%M %p") %>
+    Opening time: <%= restaurant.opentime && restaurant.opentime.strftime("%I:%M %p") %>
     <br>
-    Closing time: <%= restaurant.closetime.strftime("%I:%M %p") %>
+    Closing time: <%= restaurant.closetime && restaurant.closetime.strftime("%I:%M %p") %>
   </div>
 
 </div>
