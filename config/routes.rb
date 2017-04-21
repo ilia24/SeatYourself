@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :restaurants do
     resources :reservations, only: %i(new show create edit destroy)
+
     resources :reviews, only: %i(show create destroy)
+
 
   end
 
