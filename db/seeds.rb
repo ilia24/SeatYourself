@@ -2,9 +2,11 @@
 Restaurant.destroy_all
 User.destroy_all
 Reservation.destroy_all
+Timeslot.destroy_all
 
-
-#CURRENT SEEDS WILL NOT WORK PROPERLY FOR TESTING. we need to make forms for everytrhing to sure all the ID's line up! -ilia
+#CURRENT SEEDS WILL NOT WORK PROPERLY FOR TESTING. we need to make forms for everytrhing to sure all the ID's line up!
+# they need to be rewtweaked to ensure that all the ID's are matched up so we can keep testing associations, easiest way is to do it via forms!
+# -ilia
 
 #
 # t1 = Time.new(2002, 10, 31, 16)
