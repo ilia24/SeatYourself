@@ -2,8 +2,9 @@
 Restaurant.destroy_all
 User.destroy_all
 Reservation.destroy_all
+//remove the above codes after development finished
 
-r1= Restaurant.create(name: 'Los Colibris',image_url:'http://media.gq.com/photos/573e23554bf860ff12c0e961/master/pass/best-restaurants-gq-0616-03.jpg' )
+r1=Restaurant.create(name: 'Los Colibris',image_url:'http://media.gq.com/photos/573e23554bf860ff12c0e961/master/pass/best-restaurants-gq-0616-03.jpg' )
 r2=Restaurant.create(name: 'Il Fornello',image_url:'http://www.thestationcarrboro.com/wp-content/uploads/2017/02/Restaurant.jpg' )
 r3=Restaurant.create(name: 'Byblos',image_url:'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTGnJyd1XtKx-Jwxb6OIIm_QNtQj0lqSd44cV0IbFBktYwnfUo9' )
 r4=Restaurant.create(name: "Michael's On Simcoe",image_url:'http://cdn.torontolife.com/wp-content/uploads/2015/09/toronto-restaurant-alo-05-386x217.jpg' )
