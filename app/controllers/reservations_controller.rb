@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
 
-  before_action :load_restaurant 
+  before_action :load_restaurant
   before_action :ensure_logged_in, only: [:new, :create, :destroy, :edit, :destroy, :update]
 
   def show
@@ -25,7 +25,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
-  def updated
+  def update
     @reservation = Reservation.find(params[:id])
     if @reservation.update_attributes(reservation_params)
       redirect_to restaurant_reservation_path(@reservation)
