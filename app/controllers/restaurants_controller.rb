@@ -11,6 +11,7 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
 
     def show
       @restaurant = Restaurant.find(params[:id])
+      
       if current_user
         @review = @restaurant.reviews.build
       end
