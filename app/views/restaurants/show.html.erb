@@ -9,9 +9,11 @@
 
 <div class="reservations">
 
- <h3> Reservation: </h3>
-  <%@restaurant.reservations.each do |reservation| %>
-    <p> Reserved on <%=reservation.date && reservation.date.strftime("%Y-%m-%d") %> at <%= reservation.time && reservation.time.strftime("%I:%M %p") %> </p>
+  <h3> Reservation </h3>
+  <% if @restaurant.reservations %>
+    <% @restaurant.reservations.each do |reservation| %>
+      <p> Reserved on <%= "#{reservation.date.strftime("%Y-%m-%d")} from #{reservation.start_time.strftime("%I-%M")} to #{reservation.end_time.strftime("%I-%M")}" %> </p>
+    <% end %>
   <% end %>
     <p><%= link_to "Book now", new_restaurant_reservation_path(@restaurant) %> </p>
 </div>

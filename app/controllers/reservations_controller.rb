@@ -46,7 +46,7 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:user_id, :restaurant_id, :start_time, :end_time)
+    params.require(:reservation).permit(:user_id, :restaurant_id, :date, :group_size, :start_time, :end_time)
   end
 
   def load_restaurant
