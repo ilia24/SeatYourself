@@ -1,8 +1,6 @@
 class Timeslot < ApplicationRecord
   belongs_to :restaurant
-  has_many :reserves
-  has_many :reservations, through: :reserves
-
+  has_and_belongs_to_many :reservations
 
   def initialize(attributes={})
     super
