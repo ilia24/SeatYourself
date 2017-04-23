@@ -2,6 +2,7 @@ class Reservation < ApplicationRecord
   belongs_to :restaurant
   belongs_to :user
   has_many :reserves
+  has_many :timeslots, through: :reserves
 
 
 
@@ -12,12 +13,12 @@ class Reservation < ApplicationRecord
     @slots << Timeslot.where("start >= ? AND end <= ?", starttime, endtime)
     @slots.each do |i|
       i.update(people: people)
-      tsid = i.id
-      return tsid
+      # tsid = i.id
+      # return tsid
       # reservations_timeslots.create(reservation_id: r_id, timeslot_id: tsid)
     end
     return @slots
 
-  endr
+  end
 
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170423044440) do
+ActiveRecord::Schema.define(version: 20170423051334) do
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
@@ -51,10 +51,9 @@ ActiveRecord::Schema.define(version: 20170423044440) do
   create_table "timeslots", force: :cascade do |t|
     t.integer  "cap"
     t.integer  "people"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
     t.integer  "restaurant_id"
-    t.integer  "reservation_id"
     t.datetime "start"
     t.datetime "end"
   end
