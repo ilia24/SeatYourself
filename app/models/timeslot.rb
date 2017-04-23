@@ -7,7 +7,7 @@ class Timeslot < ApplicationRecord
     super
   end
 
-  def self.create(opentime, closetime, capacity, restaurant_id, )
+  def self.create(opentime, closetime, capacity, restaurant_id)
 
     #this line subtracts the open hours from the closed hours to get the total amount of hours open (24 hour clock)
     timeslots = (closetime.strftime("%H").to_i - opentime.strftime("%H").to_i) * 2
@@ -28,7 +28,7 @@ class Timeslot < ApplicationRecord
 
     #this do box will create the proper number of timeslots to fill the time, each with their own starting/ending time and capacity.
     timeslots.times do
-      a = Timeslot.new(start: timeslot_initial_time, end: timeslot_end_time, cap: capacity, people: 0)
+      a = Timeslot.new(start: timeslot_initial_time, end: timeslot_end_time, cap: capacity, people: 0, restaurant_id: restaurant_id)
       a.save(:validate => false)
       timeslot_initial_time += 1800
       timeslot_end_time += 1800
