@@ -19,18 +19,17 @@
   </p>
 
   <p>
+  From
+  <% f.label :start_time %>
+  <%= f.time_select :start_time, {ampm: true, minute_step: 30} %>
+  to
+  <% f.label :end_time%>
+  <%= f.time_select :end_time, {ampm:true, minute_step: 30}  %>
+  </p>
+
+  <p>
   <%= f.label :group_size %>
   <%= f.number_field :group_size, min: 1, max: 10, step:1 %>
-  </p>
-
-  <p>
-  <%= f.label :start_time %>
-  <br><%= f.time_select :start_time, {ampm: true, minute_step: 30} %>
-  </p>
-
-  <p>
-  <%= f.label :end_time %>
-  <br><%= f.time_select :end_time, {ampm:true, minute_step: 30}  %>
   </p>
 
   <p>

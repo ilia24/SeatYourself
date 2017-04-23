@@ -4,7 +4,7 @@
 </p>
 
 <%= render 'single_restaurant', restaurant: @restaurant %>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure you want to delete the restaurant #{@restaurant.name}? This cannot be undone!"}%>
 
 <div class="reservations">
@@ -12,7 +12,7 @@
   <h3> Reservation </h3>
   <% if @restaurant.reservations %>
     <% @restaurant.reservations.each do |reservation| %>
-      <p> Reserved on <%= "#{reservation.date.strftime("%Y-%m-%d")} from #{reservation.start_time.strftime("%I-%M")} to #{reservation.end_time.strftime("%I-%M")}" %> </p>
+      <p> Reserved on <%= "#{reservation.date.strftime("%a %Y-%m-%d")} from #{reservation.start_time.strftime("%I:%M")} to #{reservation.end_time.strftime("%I:%M")}" %> </p>
     <% end %>
   <% end %>
     <p><%= link_to "Book now", new_restaurant_reservation_path(@restaurant) %> </p>
