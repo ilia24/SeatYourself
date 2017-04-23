@@ -21,7 +21,7 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
     def create
       @restaurant = Restaurant.new(restaurant_params)
 
-      Timeslot.create(@restaurant.opentime, @restaurant.closetime, 77, @restaurant.id)
+      Timeslot.create(@restaurant.opentime, @restaurant.closetime, @restaurant.capacity, @restaurant.id)
 
 
       if @restaurant.save
