@@ -8,6 +8,7 @@ class Reservation < ApplicationRecord
 
   #this base method can find timeslots based on start and end time, and adds people to them
   #R_ID IS TEMP PLACEHOLDER METHOD FOR RESERVATION ID
+  #THIS METHOD IS FUNCTIONAL BUT NEEDS TO BE PLUGGED INTO OUR FULL SYSTEM.
   def self.placeholder(starttime, endtime, people, r_id)
     @slots = Timeslot.where("start >= ? AND end <= ?", starttime, endtime)
     @slots.update(people: people)
