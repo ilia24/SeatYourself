@@ -2,7 +2,7 @@ class Reservation < ApplicationRecord
   belongs_to :restaurant
   belongs_to :user
   has_many :reserves
-  has_many :timeslots, through: :reserves
+  has_and_belongs_to_many :timeslots
 
 
 
