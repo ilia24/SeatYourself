@@ -9,16 +9,13 @@ class Reservation < ApplicationRecord
   #this base method can find timeslots based on start and end time, and adds people to them
   #R_ID IS TEMP PLACEHOLDER METHOD FOR RESERVATION ID
   def self.placeholder(starttime, endtime, people, r_id)
-    @slots = []
-    @slots << Timeslot.where("start >= ? AND end <= ?", starttime, endtime)
-    @slots.each do |i|
-      i.update(people: people)
-      # tsid = i.id
-      # return tsid
-      # reservations_timeslots.create(reservation_id: r_id, timeslot_id: tsid)
+    @slots = Timeslot.where("start >= ? AND end <= ?", starttime, endtime)
+    @slots.update(people: people)
+    @tsid = @slots.ids
+    @tsid.each do |timeid|
+      res = Reserve.new(reservation_id: r_id, timeslot_id: timeid)
+      res.save(:validate => false)
     end
-    return @slots
-
   end
 
 end
