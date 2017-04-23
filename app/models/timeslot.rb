@@ -6,7 +6,7 @@ class Timeslot < ApplicationRecord
     super
   end
 
-  def create(opentime, closetime, capacity, restaurant_id)
+  def self.create(opentime, closetime, capacity, restaurant_id)
 
     #this line subtracts the open hours from the closed hours to get the total amount of hours open (24 hour clock)
     timeslots = (closetime.strftime("%H").to_i - opentime.strftime("%H").to_i) * 2
