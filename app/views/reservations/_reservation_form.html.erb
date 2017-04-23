@@ -1,0 +1,42 @@
+<div class="form_container">
+
+  <% if @reservation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this edit from being saved:</h2>
+
+      <ul>
+      <% @reservation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for([@restaurant, @reservation]) do |f| %>
+  <p>
+  <%= f.label :date %>
+  <%= f.date_select :date, { start_year: 2017, order: [:day, :month, :year]} %>
+  </p>
+
+  <p>
+  <%= f.label :group_size %>
+  <%= f.<%= number_field(:group_size in: 1..20, step: 1) %>
+  </p>
+
+  <p>
+  <%= f.label :start_time %>
+  <br><%= f.time_select :start_time, {ampm: true, minute_step: 30} %>
+  </p>
+
+  <p>
+  <%= f.label :end_time %>
+  <br><%= f.time_select :end_time, {ampm:true, minute_step: 30}  %>
+  </p>
+
+  <p>
+    <%= f.submit 'Seat Yourself!' %>
+  </p>
+
+<%end%>
+
+</div>
