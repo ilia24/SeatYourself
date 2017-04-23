@@ -1,7 +1,8 @@
 class Reservation < ApplicationRecord
   belongs_to :restaurant
   belongs_to :user
-  has_and_belongs_to_many :timeslots
+  has_many :reserves
+
 
 
   #this base method can find timeslots based on start and end time, and adds people to them
@@ -17,6 +18,6 @@ class Reservation < ApplicationRecord
     end
     return @slots
 
-  end
+  endr
 
 end
