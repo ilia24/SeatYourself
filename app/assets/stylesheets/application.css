@@ -204,7 +204,7 @@ input[type=tel] {
   float: right;
   margin-top: 12px;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 200;
   color: white;
   background-color: #262626;
   padding: 15px;
@@ -221,4 +221,19 @@ input[type=tel] {
 
 .field_with_errors {
   display: inline;
+}
+
+/* RESTAURANT INDEX */
+
+.index_header {
+  height: 330px;
+  overflow: hidden;
+}
+
+.index_header img{
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
 }
