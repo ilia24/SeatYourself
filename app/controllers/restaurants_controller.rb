@@ -35,7 +35,7 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
       @restaurant = Restaurant.find(params[:id])
 
       if @restaurant.update_attributes(restaurant_params)
-        redirect_to restaurant_url(@restaurant)
+        redirect_to restaurant_path(@restaurant)
       else
         render :edit
       end
@@ -49,6 +49,6 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
 
   private
     def restaurant_params
-      params.require(:restaurant).permit(:name, :opentime, :closetime, :image_url)
+      params.require(:restaurant).permit(:name, :opentime, :closetime, :image_url, :capacity)
     end
 end

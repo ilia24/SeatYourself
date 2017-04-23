@@ -1,3 +1,4 @@
+
 <p>
   <%= link_to 'Back to all restaurants', restaurants_path %>
 </p>
@@ -10,7 +11,7 @@
 
  <h3> Reservation: </h3>
   <%@restaurant.reservations.each do |reservation| %>
-    <p> Reserved at on <%=reservation.date.strftime("%Y-%m-%d") %> at <%= reservation.time.strftime("%I:%M %p") %> </p>
+    <p> Reserved on <%=reservation.date && reservation.date.strftime("%Y-%m-%d") %> at <%= reservation.time && reservation.time.strftime("%I:%M %p") %> </p>
   <% end %>
     <p><%= link_to "Book now", new_restaurant_reservation_path(@restaurant) %> </p>
 </div>
