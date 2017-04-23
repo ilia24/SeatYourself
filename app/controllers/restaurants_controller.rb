@@ -20,10 +20,10 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
 
     def create
       @restaurant = Restaurant.new(restaurant_params)
-      Timeslot.create(@restaurant.opentime, @restaurant.closetime, @restaurant.capacity, @restaurant.id)
 
       if @restaurant.save
         redirect_to restaurants_url
+        Timeslot.create(@restaurant.opentime, @restaurant.closetime, @restaurant.capacity, @restaurant.id)
       else
         render :new
       end

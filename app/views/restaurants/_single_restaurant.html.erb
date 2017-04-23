@@ -15,7 +15,7 @@
     <br>
     Closing time: <%= restaurant.closetime && restaurant.closetime.strftime("%I:%M %p") %>
 
-    <%= restaurant.timeslots.each do |ts| %>
+    <% restaurant.timeslots.each do |ts| %>
 Start : <%= ts.start %> End : <%= ts.end %>
 <%end %>
   </div>
