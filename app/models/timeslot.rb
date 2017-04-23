@@ -17,7 +17,6 @@ class Timeslot < ApplicationRecord
     if closetime.strftime("%M").to_i == 30
       timeslots += 1
     end
-
     if opentime.strftime("%M").to_i == 30
       timeslots -= 1
     end
