@@ -5,7 +5,7 @@ class Reservation < ApplicationRecord
 
   def placeholder(starttime, endtime, group_size,restaurant_id)
     @slots = Timeslot.where("start >= ? AND end <= ? AND restaurant_id = ?", starttime, endtime, restaurant_id)
-    if @slots.select_if {|slot| (slot.people + group_size) > slot.cap} == nil
+    if @slots.select {|slot| (slot.people + group_size) > slot.cap} == nil
       @slots.each {|slot| slot.people + group_size}
     else
       return false

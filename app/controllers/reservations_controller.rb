@@ -15,8 +15,8 @@ class ReservationsController < ApplicationController
     @reservation = @restaurant.reservations.build(reservation_params)
 
     @reservation.user = current_user
-    @reservation.placeholder(params[:start_time], params[:end_time], params[:group_size], @restaurant.id, @restaurant.capacity)
-    if @reservation.save
+    if @reservation.placeholder(params[:start_time], params[:end_time], params[:group_size], @restaurant.id)
+      @reservation.save 
       redirect_to restaurant_path(@restaurant), notice: 'Reservation booked successfully'
     else
       render :new
