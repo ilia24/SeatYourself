@@ -1,7 +1,7 @@
 class ReservationsController < ApplicationController
 
   before_action :load_restaurant
-  before_action :ensure_logged_in, only: [:new, :create, :destroy, :edit, :destroy, :update]
+  before_action :ensure_logged_in, only: [:new, :create, :edit, :destroy, :update]
 
   def show
     @reservation = Reservation.find(params[:id])
@@ -46,7 +46,7 @@ class ReservationsController < ApplicationController
 
   private
   def reservation_params
-    params.require(:reservation).permit(:user_id, :restaurant_id, :start_time, :end_time)
+    params.require(:reservation).permit(:user_id, :restaurant_id, :date, :group_size, :start_time, :end_time)
   end
 
   def load_restaurant

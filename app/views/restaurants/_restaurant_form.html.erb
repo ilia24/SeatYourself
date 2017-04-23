@@ -1,6 +1,18 @@
 <div class="form_container">
 
-  <%= form_for restaurant do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this edit from being saved:</h2>
+
+      <ul>
+      <% @restaurant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for (@restaurant) do |f| %>
 
   <div id="name">
     <p>
@@ -12,14 +24,14 @@
   <div id="open_time">
     <p>
     <%= f.label :opentime %>
-    <br><%= f.time_select 'opentime', {ampm: true, minute_step: 30} %>
+    <br><%= f.time_select :opentime, {ampm: true, minute_step: 30} %>
     </p>
   </div>
 
   <div id="close_time">
     <p>
     <%= f.label :closetime %>
-    <br><%= f.time_select 'closetime', {ampm:true, minute_step: 30}  %>
+    <br><%= f.time_select :closetime, {ampm:true, minute_step: 30}  %>
     </p>
   </div>
 
