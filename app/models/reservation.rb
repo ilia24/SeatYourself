@@ -3,10 +3,10 @@ class Reservation < ApplicationRecord
   belongs_to :user
   has_and_belongs_to_many :timeslots
 
-  def placeholder(starttime, endtime, group_size,restaurant_id)
+  def placeholder(starttime, endtime, group_size, restaurant_id)
     @slots = Timeslot.where("start >= ? AND end <= ? AND restaurant_id = ?", starttime, endtime, restaurant_id)
-    if @slots.select {|slot| (slot.people + group_size) > slot.cap} == nil
-      @slots.each {|slot| slot.people + group_size}
+    if @slots.select { |slot| (slot.people + group_size) > slot.cap} == nil
+      @slots.each { |slot| slot.people + group_size}
     else
       return false
     end
