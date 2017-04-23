@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20170423051334) do
     t.datetime "updated_at",    null: false
     t.date     "start_time"
     t.date     "end_time"
+    t.integer  "group_size"
   end
 
   create_table "reserves", force: :cascade do |t|

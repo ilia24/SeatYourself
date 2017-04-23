@@ -4,18 +4,20 @@
 </p>
 
 <%= render 'single_restaurant', restaurant: @restaurant %>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Delete', restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure you want to delete the restaurant #{@restaurant.name}? This cannot be undone!"}%>
 
 <div class="reservations">
 
- <h3> Reservation: </h3>
-  <%@restaurant.reservations.each do |reservation| %>
-    <p> Reserved on <%=reservation.date && reservation.date.strftime("%Y-%m-%d") %> at <%= reservation.time && reservation.time.strftime("%I:%M %p") %> </p>
+  <h3> Reservation </h3>
+  <% if @restaurant.reservations %>
+    <% @restaurant.reservations.each do |reservation| %>
+      <p> Reserved on <%= "#{reservation.date}" %> from <%="#{reservation.start_time}" %> to <%="#{reservation.end_time}" %> </p>
+    <% end %>
   <% end %>
     <p><%= link_to "Book now", new_restaurant_reservation_path(@restaurant) %> </p>
 </div>
-
+<!-- # .strftime("%Y-%m-%d")   .strftime("%I:%M %p")  .strftime("%I:%M %p") -->
 <div class= "reviews">
 <h3> Reviews </h3>
 <p> Reviews for <%= @restaurant.name %>
