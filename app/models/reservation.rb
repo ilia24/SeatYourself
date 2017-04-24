@@ -13,8 +13,6 @@ class Reservation < ApplicationRecord
       return false
     end
 
-    # @slots.each { |slot| slot.update(people: slot.people + group_size) }
-
   end
 
 end
