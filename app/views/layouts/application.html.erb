@@ -34,9 +34,11 @@
               <%= image_tag ("https://static.pexels.com/photos/127229/pexels-photo-127229.jpeg")%>
 
               <div class="profile_dropdown">
-                <ul clas>
+                <ul>
                   <li><%= current_user.name %></li>
-                  <li><%= link_to 'Log Out', session_path("current"), :method => :delete%></li>
+                  <%= link_to session_path("current"), :method => :delete do %>
+                    <li>Logout</li>
+                  <% end %>
                 </ul>
               </div>
             </div>
