@@ -233,6 +233,11 @@ input[type=tel] {
   width: 100%;
 }
 
+.form_container {
+  position: absolute;
+  top: 100%;
+}
+
 #index_heading {
   text-align: center;
   position: relative;
