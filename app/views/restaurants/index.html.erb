@@ -1,4 +1,6 @@
-<h1>Restaurants index </h1>
+<header class="index_header">
+    <%= image_tag ("restaurant.png") %>
+</header>
 
 <main class="index_main">
   <ul id="restaurant_grid">
@@ -7,7 +9,10 @@
         <%= render 'single_restaurant', restaurant: current_rest %>
       </li>
     <% end %>
+
   </ul>
+
+
 </main>
 
 <%= link_to 'Add a new Restaurant',  new_restaurant_path %>
