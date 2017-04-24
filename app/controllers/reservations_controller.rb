@@ -13,8 +13,10 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = @restaurant.reservations.build(reservation_params)
+
     @reservation.user = current_user
-    if @reservation.save
+    if @reservation.placeholder(@reservation.start_time, @reservation.end_time, @reservation.group_size, @restaurant.id)
+      @reservation.save
       redirect_to restaurant_path(@restaurant), notice: 'Reservation booked successfully'
     else
       render :new

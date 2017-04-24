@@ -3,6 +3,19 @@
 <% if current_user %>
 
 <%= form_for([@restaurant, @reservation]) do |f| %>
+
+<% if @reservation.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this edit from being saved:</h2>
+
+    <ul>
+    <% @reservation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <p>
 <%= f.label :date %>
 <%= f.date_select :date, { start_year: 2017, order: [:day, :month, :year]} %>
@@ -19,7 +32,7 @@ to
 
 <p>
 <%= f.label :group_size %>
-<%= f.number_field :group_size, min: 1, max: 10, step:1 %>
+<%= f.number_field :group_size, min: 1,step:1 %>
 </p>
 
 

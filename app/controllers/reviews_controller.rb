@@ -16,7 +16,7 @@ class ReviewsController < ApplicationController
       redirect_to restaurant_path(@restaurant)
     else
       flash[:alert] = "Review NOT posted"
-      render 'restaurants/show'
+      redirect_to restaurant_path(@restaurant)
     end
   end
 
