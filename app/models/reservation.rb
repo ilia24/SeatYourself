@@ -2,6 +2,7 @@ class Reservation < ApplicationRecord
   belongs_to :restaurant
   belongs_to :user
   has_and_belongs_to_many :timeslots
+  validates :date, :start_time, :end_time, :group_size, presence: true
 
   def placeholder(starttime, endtime, group_size, restaurant_id)
     @slots = Timeslot.where("start >= ? AND end <= ? AND restaurant_id = ?", starttime, endtime, restaurant_id)
