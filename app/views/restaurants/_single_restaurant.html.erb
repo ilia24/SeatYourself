@@ -11,7 +11,6 @@
         <div class="title_header">
           <h2><%= link_to "#{restaurant.name}", restaurant %></h2>
         </div>
-
         <div class="review">
           <%= image_tag ("review_stars.svg") %>
           <%= image_tag ("review_stars.svg") %>
@@ -19,25 +18,29 @@
           <%= image_tag ("review_stars.svg") %>
           <%= image_tag ("review_stars.svg") %>
         </div>
-
         <p>lorem ipsum</p>
+      </div>
 
-        <div class="">
-          <br>
-          Opening time: <%= restaurant.opentime && restaurant.opentime.strftime("%I:%M %p") %>
-          <br>
-          Closing time: <%= restaurant.closetime && restaurant.closetime.strftime("%I:%M %p") %>
-        </div>
+        <div class="hours">
+            <br>
+            Opening time:
+            <br>
+            <%= restaurant.opentime && restaurant.opentime.strftime("%I:%M %p") %>
+            <br>
+            Closing time:
+            <br>
+            <%= restaurant.closetime && restaurant.closetime.strftime("%I:%M %p") %>
+          </div>
 
         <div class="button_book">
-          <a href="#">BOOK NOW</a>
-        </div>
-      </div>
+            <a href="#">BOOK NOW</a>
+          </div>
+
     </div>
-
-
 
 
   </div>
 
 </div>
+
+<hr>
