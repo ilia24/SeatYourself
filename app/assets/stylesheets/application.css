@@ -162,6 +162,20 @@ input[type=tel] {
   padding: 0;
 }
 
+.profile_dropdown {
+  display: none;
+  position: absolute;
+  background-color: red;
+  min-width: 160px;
+  z-index: 1;
+  right: 0;
+}
+
+.user_profile:hover .profile_dropdown {
+  display: block;
+  margin-top: 8px;
+}
+
 .landing_img {
   height: 100%;
   overflow: hidden;
