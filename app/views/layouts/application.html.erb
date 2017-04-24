@@ -12,6 +12,7 @@
 
     <nav>
 
+    
       <div class="logo">
         <a href="/"><%= image_tag ("seat-yourself-logo.svg")%></a>
       </div>
@@ -28,7 +29,11 @@
         <% end %>
 
         <% if current_user %>
-            Signed in as: <%= current_user.name %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
+            <div class="user_profile">
+              <%= image_tag ("https://static.pexels.com/photos/127229/pexels-photo-127229.jpeg")%>
+            </div>
+            <!-- <%= current_user.name %> -->
+            <!-- <%= link_to 'Log Out', session_path("current"), :method => :delete%> -->
             <% else %>
             <%= link_to 'LOG IN', new_session_path %>
             <%= link_to 'SIGN UP', new_user_path %>
