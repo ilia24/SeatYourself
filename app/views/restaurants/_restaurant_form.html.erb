@@ -50,6 +50,41 @@
   </p>
 </div>
 
+<div id="cuisine">
+  <p>
+  <%= f.label :cuisine %>
+  <br><%= f.text_field :cuisine %>
+  </p>
+</div>
+
+<div id="address">
+  <p>
+  <%= f.label :address %>
+  <br><%= f.text_field :address %>
+  </p>
+</div>
+
+<div id="contact_number">
+  <p>
+  <%= f.label :contact_number %>
+  <br><%= f.telephone_field :contact_number %>
+  </p>
+</div>
+
+<div id="website">
+  <p>
+  <%= f.label :website %>
+  <br><%= f.url_field :website %>
+  </p>
+</div>
+
+<div id="price_range">
+  <p>
+  <%= f.label :price_range_dollars %>
+  <br><%= f.range_field :price_range, in: 1..5 %>
+  </p>
+</div>
+
   <div class="submit">
     <p>
       <%= f.submit %>
