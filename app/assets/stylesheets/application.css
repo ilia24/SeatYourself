@@ -359,25 +359,58 @@ input[type=tel] {
   margin-left: 100px;
   margin-right: 100px;
   margin: auto;
+  display: flex;
 }
 
 .restaurant_info_wrapper {
   margin-left: 24px;
   max-width: 424px;
-  background-color: #262626;
 }
 
 .show_main_info {
   padding: 12px;
-  width: 424px;
+  width: 300px;
+  background-color: #262626;
   color: white;
 }
 
 .restaurants_container {
   display: flex;
   margin-top: 50px;
+  flex-wrap: wrap;
 }
 
 .title_header_show a{
   color: white;
+}
+
+.reservation_picker_container {
+  margin-top: 50px;
+}
+
+.reservation_picker {
+  display: flex;
+  padding: 24px;
+  /*border: solid 1px #95989A;*/
+  box-shadow: 0 6px 50px rgba(0, 0, 0, 0.16);
+}
+
+.reservation_picker h2 {
+  font-weight: 300;
+}
+
+.book_guest {
+  padding-right: 24px;
+}
+
+.book_date {
+  padding-left: 24px;
+  padding-right: 24px;
+  border-left: solid 1px #f2f2f2;
+}
+
+.book_time {
+  padding-left: 24px;
+  padding-right: 24px;
+  border-left: solid 1px #f2f2f2;
 }
