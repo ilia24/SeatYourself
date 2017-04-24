@@ -1,5 +1,7 @@
 <div class="form_container">
 
+  <%= form_for (@restaurant) do |f| %>
+
   <% if @restaurant.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this edit from being saved:</h2>
@@ -12,7 +14,6 @@
     </div>
   <% end %>
 
-  <%= form_for (@restaurant) do |f| %>
 
   <div id="name">
     <p>
