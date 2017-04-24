@@ -22,14 +22,20 @@
       </div>
 
         <div class="hours">
-            <br>
-            Opening time:
-            <br>
-            <%= restaurant.opentime && restaurant.opentime.strftime("%I:%M %p") %>
-            <br>
-            Closing time:
-            <br>
-            <%= restaurant.closetime && restaurant.closetime.strftime("%I:%M %p") %>
+            <div class="opening">
+              <h3>OPENING TIME</h3>
+              <p>
+              <%= restaurant.opentime && restaurant.opentime.strftime("%I:%M %p") %>
+              </p>
+            </div>
+            <span id="hours_to">-</span>
+            <div class="closing">
+              <h3>CLOSING TIME</h3>
+              <p>
+                <%= restaurant.closetime && restaurant.closetime.strftime("%I:%M %p") %>
+              </p>
+            </div>
+
           </div>
 
         <div class="button_book">

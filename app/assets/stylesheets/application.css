@@ -46,6 +46,14 @@ h2 {
   margin: 0;
 }
 
+h3{
+  color: #95989A;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -265,6 +273,10 @@ input[type=tel] {
   margin: 0 auto;
 }
 
+.restaurants_wrapper {
+  margin: 0 auto;
+}
+
 .restaurants {
   display: flex;
   align-items: center;
@@ -303,5 +315,28 @@ input[type=tel] {
 }
 
 .hours {
+  display: inline-block;
   padding-left: 50px;
+  margin-right: 70px;
+}
+
+.hours p {
+  font-size: 24px;
+  margin: 0;
+  float: left;
+}
+
+#hours_to {
+  float: left;
+  margin-top: 14px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.opening {
+  float: left;
+}
+
+.closing {
+  float: left;
 }
