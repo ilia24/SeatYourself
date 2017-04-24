@@ -1,0 +1,80 @@
+<div class="restaurants_view_wrapper">
+
+  <div class= "restaurants_container">
+
+    <div class="view_main_container">
+
+      <div class= "restaurant_view_image">
+        <img src="<%="#{restaurant.image_url}"%>">
+      </div>
+
+      <div class="reservation_picker_container">
+        <p>BOOK A RESERVATION</p>
+
+        <div class="reservation_picker">
+
+          <div class="book_fields">
+            <div class="book_guest">
+              <h3>GUEST(S)</h3>
+              <h2>2 persons</h2>
+            </div>
+            <div class="book_date">
+              <h3>DATE</h3>
+              <h2>May 26, 2017</h2>
+            </div>
+            <div class="book_time">
+              <h3>TIME</h3>
+              <h2>7:30 pm</h2>
+            </div>
+          </div>
+
+          <div class="button_book">
+              <a href="#">BOOK NOW</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="restaurant_info_wrapper">
+      <div class="show_main_info">
+        <div class="title_header_show">
+          <h2><%= link_to "#{restaurant.name}", restaurant %></h2>
+        </div>
+        <div class="review">
+          <%= image_tag ("review_stars.svg") %>
+          <%= image_tag ("review_stars.svg") %>
+          <%= image_tag ("review_stars.svg") %>
+          <%= image_tag ("review_stars.svg") %>
+          <%= image_tag ("review_stars.svg") %>
+        </div>
+        <p>lorem ipsum</p>
+        <br>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+
+
+        <!-- <div class="hours">
+            <div class="opening">
+              <h3>OPENING TIME</h3>
+              <p>
+              <%= restaurant.opentime && restaurant.opentime.strftime("%I:%M %p") %>
+              </p>
+            </div>
+            <span id="hours_to">-</span>
+            <div class="closing">
+              <h3>CLOSING TIME</h3>
+              <p>
+                <%= restaurant.closetime && restaurant.closetime.strftime("%I:%M %p") %>
+              </p>
+            </div>
+
+          </div> -->
+
+
+
+    </div>
+
+  </div>
+
+</div>
