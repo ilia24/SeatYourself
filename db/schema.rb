@@ -12,12 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20170423220958) do
 
-  create_table "dates", force: :cascade do |t|
-    t.date    "date"
-    t.string  "current_capacity"
-    t.integer "reservation_id"
-  end
-
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "restaurant_id"
@@ -25,9 +19,9 @@ ActiveRecord::Schema.define(version: 20170423220958) do
     t.date     "date"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.integer  "group_size"
     t.time     "start_time"
     t.time     "end_time"
-    t.integer  "group_size"
   end
 
   create_table "reservations_timeslots", id: false, force: :cascade do |t|
@@ -63,7 +57,6 @@ ActiveRecord::Schema.define(version: 20170423220958) do
     t.integer  "restaurant_id"
     t.datetime "start"
     t.datetime "end"
-    t.integer  "reserve_id"
   end
 
   create_table "users", force: :cascade do |t|
