@@ -46,6 +46,14 @@ h2 {
   margin: 0;
 }
 
+h3{
+  color: #95989A;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 0;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
@@ -53,6 +61,11 @@ ul {
 
 li {
   text-align: left;
+}
+
+hr {
+  margin-top: 24px;
+  border-top: solid 1px #f2f2f2;
 }
 
 label {
@@ -156,6 +169,22 @@ input[type=tel] {
   padding-left: 22px;
 }
 
+.button_book {
+  position: relative;
+  font-size: 14px;
+  background-color: #262626;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  float: right;
+  height: 16px;
+}
+
+.button_book a {
+  color: white;
+  letter-spacing: 2px;
+}
+
 .button_lg {
   position: relative;
   top: 40%;
@@ -204,7 +233,7 @@ input[type=tel] {
   float: right;
   margin-top: 12px;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 200;
   color: white;
   background-color: #262626;
   padding: 15px;
@@ -217,4 +246,181 @@ input[type=tel] {
 .error_messages {
   position: absolute;
   right: 0;
+}
+
+.field_with_errors {
+  display: inline;
+}
+
+/* RESTAURANT INDEX */
+
+.index_header {
+  height: 330px;
+  overflow: hidden;
+}
+
+.index_header img{
+  top: 50%;
+  width: 100%;
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+}
+
+.restaurant_container {
+  background-color: white;
+  max-width: 1000px;
+  height: 204px;
+  margin: 0 auto;
+}
+
+.restaurants_wrapper {
+  margin: 0 auto;
+}
+
+.restaurants {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.restaurant_info {
+  display: flex;
+  align-items: center;
+}
+
+.index_main_info {
+  padding-left: 24px;
+  width: 250px;
+}
+
+.index_main_info p {
+  font-size: 16px;
+  font-family: "Gotham";
+  color: #95989a;
+  padding-top: 6px;
+  margin: 0;
+}
+
+.restaurant_image img {
+  width: 180px;
+  height: 180px;
+}
+
+.review {
+  padding-top: 8px;
+}
+
+.review img {
+  width: 22px;
+}
+
+.hours {
+  display: inline-block;
+  padding-left: 50px;
+  margin-right: 70px;
+}
+
+.hours p {
+  font-size: 24px;
+  margin: 0;
+  float: left;
+}
+
+#hours_to {
+  float: left;
+  margin-top: 14px;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+
+.opening {
+  float: left;
+}
+
+.closing {
+  float: left;
+}
+
+
+/* RESTAURANT VIEW */
+
+.restaurant_view_image {
+  width: 718px;
+  height: 336px;
+  overflow: hidden;
+}
+
+.restaurant_view_image img {
+  width: 100%
+}
+
+.restaurants_view_wrapper {
+  max-width: 1200px;
+  margin-left: 100px;
+  margin-right: 100px;
+  margin: auto;
+  display: flex;
+}
+
+.restaurant_info_wrapper {
+  max-width: 718px;
+}
+
+.view_main_container {
+  margin-right: 24px;
+}
+
+.show_main_info {
+  padding: 12px;
+  width: 300px;
+  background-color: #262626;
+  color: white;
+}
+
+.restaurants_container {
+  display: flex;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.title_header_show a{
+  color: white;
+}
+
+.reservation_picker_container {
+  margin-top: 50px;
+}
+
+.reservation_picker {
+  display: flex;
+  padding: 24px;
+  /*border: solid 1px #95989A;*/
+  box-shadow: 0 6px 50px rgba(0, 0, 0, 0.16);
+  justify-content: space-between;
+}
+
+.reservation_picker h2 {
+  font-weight: 300;
+}
+
+.book_fields {
+  display: flex;
+  align-items: center;
+}
+
+.book_guest {
+  padding-right: 24px;
+}
+
+.book_date {
+  padding-left: 24px;
+  padding-right: 24px;
+  border-left: solid 1px #f2f2f2;
+}
+
+.book_time {
+  padding-left: 24px;
+  padding-right: 24px;
+  border-left: solid 1px #f2f2f2;
 }
