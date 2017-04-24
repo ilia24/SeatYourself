@@ -177,6 +177,7 @@ input[type=tel] {
   padding-left: 25px;
   padding-right: 25px;
   float: right;
+  height: 16px;
 }
 
 .button_book a {
@@ -363,8 +364,11 @@ input[type=tel] {
 }
 
 .restaurant_info_wrapper {
-  margin-left: 24px;
-  max-width: 424px;
+  max-width: 718px;
+}
+
+.view_main_container {
+  margin-right: 24px;
 }
 
 .show_main_info {
@@ -393,10 +397,16 @@ input[type=tel] {
   padding: 24px;
   /*border: solid 1px #95989A;*/
   box-shadow: 0 6px 50px rgba(0, 0, 0, 0.16);
+  justify-content: space-between;
 }
 
 .reservation_picker h2 {
   font-weight: 300;
+}
+
+.book_fields {
+  display: flex;
+  align-items: center;
 }
 
 .book_guest {
