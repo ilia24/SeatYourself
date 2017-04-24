@@ -355,11 +355,29 @@ input[type=tel] {
 }
 
 .restaurants_view_wrapper {
-  max-width: 900px;
+  max-width: 1200px;
+  margin-left: 100px;
+  margin-right: 100px;
   margin: auto;
 }
 
 .restaurant_info_wrapper {
+  margin-left: 24px;
   max-width: 424px;
-  background-color: rgba(214, 41, 41, 0.28);
+  background-color: #262626;
+}
+
+.show_main_info {
+  padding: 12px;
+  width: 424px;
+  color: white;
+}
+
+.restaurants_container {
+  display: flex;
+  margin-top: 50px;
+}
+
+.title_header_show a{
+  color: white;
 }
