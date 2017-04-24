@@ -23,7 +23,11 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
 
       if @restaurant.save
         redirect_to restaurants_url
-        Timeslot.create(@restaurant.opentime, @restaurant.closetime, @restaurant.capacity, @restaurant.id)
+        i=0
+        while i <= 14
+         Timeslot.create(@restaurant.opentime + 3600*24*i, @restaurant.closetime + 3600*24*i, @restaurant.capacity, @restaurant.id)
+         i += 1
+       end
       else
         render :new
       end
