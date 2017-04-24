@@ -25,14 +25,14 @@
             <div class="opening">
               <h3>OPENING TIME</h3>
               <p>
-              <%= restaurant.opentime && restaurant.opentime.strftime("%I:%M %p") %>
+              <%= restaurant.mondayopen && restaurant.mondayopen.strftime("%I:%M %p") %>
               </p>
             </div>
             <span id="hours_to">-</span>
             <div class="closing">
               <h3>CLOSING TIME</h3>
               <p>
-                <%= restaurant.closetime && restaurant.closetime.strftime("%I:%M %p") %>
+                <%= restaurant.mondayclose && restaurant.mondayclose.strftime("%I:%M %p") %>
               </p>
             </div>
 
