@@ -340,3 +340,26 @@ input[type=tel] {
 .closing {
   float: left;
 }
+
+
+/* RESTAURANT VIEW */
+
+.restaurant_view_image {
+  width: 718px;
+  height: 336px;
+  overflow: hidden;
+}
+
+.restaurant_view_image img {
+  width: 100%
+}
+
+.restaurants_view_wrapper {
+  max-width: 900px;
+  margin: auto;
+}
+
+.restaurant_info_wrapper {
+  max-width: 424px;
+  background-color: rgba(214, 41, 41, 0.28);
+}
