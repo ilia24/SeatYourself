@@ -1,13 +1,13 @@
 html {
   font-family: "Raleway", "Gotham", "Helvetica", sans-serif;
-  margin: 0;
+  overflow: hidden;
   height: 100%;
 }
 
 body {
   margin: 0;
   height: 100%;
-  top: 100px;
+  overflow: auto;
 }
 
 nav {
@@ -235,7 +235,8 @@ input[type=tel] {
 
 #index_heading {
   text-align: center;
-  margin-top: 3em;
+  position: relative;
+  top: 30%;
 }
 
 #index_heading h1 {
@@ -265,7 +266,7 @@ input[type=tel] {
 
 .button_lg {
   position: relative;
-  top: 40%;
+  top: 50%;
   background-color: white;
   font-size: 16px;
   font-weight: 500;
@@ -277,8 +278,14 @@ input[type=tel] {
 }
 
 .button_wrapper {
-  text-align: center;
+  justify-content: center;
   height: 100%;
+}
+
+.index_flex {
+  display: flex;
+  justify-content: center;
+    height: 90%;
 }
 
 /* LOG IN & SIGN UP*/
