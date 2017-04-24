@@ -10,6 +10,7 @@
 <div class = "capacity" >
   <p>
         Restaurant capacity: <%= @restaurant.capacity %>
+        Price range: <%= Restaurant.price_range_conversion(@restaurant.id)[0] %> <%= Restaurant.price_range_conversion(@restaurant.id)[1] %>
   </p>
 </div>
 
