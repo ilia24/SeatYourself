@@ -234,8 +234,8 @@ input[type=tel] {
 }
 
 .form_container {
-  position: absolute;
-  top: 100%;
+  position: relative;
+  top: 100px;
 }
 
 #index_heading {
