@@ -156,6 +156,21 @@ input[type=tel] {
   padding-left: 22px;
 }
 
+.button_book {
+  position: relative;
+  font-size: 14px;
+  background-color: #262626;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  float: right;
+}
+
+.button_book a {
+  color: white;
+  letter-spacing: 2px;
+}
+
 .button_lg {
   position: relative;
   top: 40%;
@@ -236,4 +251,48 @@ input[type=tel] {
   -webkit-transform: translate(0,-50%);
   -ms-transform: translate(0,-50%);
   transform: translate(0,-50%);
+}
+
+.restaurant_container {
+  background-color: white;
+  max-width: 1000px;
+  height: 204px;
+  margin: 0 auto;
+}
+
+.restaurants {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.index_main_info {
+  padding-left: 24px;
+  display: flex;
+  align-items: center;
+}
+
+.index_main_info p {
+  font-size: 16px;
+  font-family: "Gotham";
+  color: #95989a;
+  padding-top: 6px;
+  margin: 0;
+}
+
+.restaurant_image img {
+  width: 180px;
+  height: 180px;
+}
+
+.review {
+  padding-top: 8px;
+}
+
+.review img {
+  width: 22px;
+}
+
+.restaurant_info {
+  align-content: flex-start;
 }
