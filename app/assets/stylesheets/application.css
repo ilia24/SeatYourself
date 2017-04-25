@@ -234,8 +234,8 @@ input[type=tel] {
 }
 
 .form_container {
-  position: absolute;
-  top: 100%;
+  position: relative;
+  top: 100px;
 }
 
 #index_heading {
@@ -513,4 +513,9 @@ input[type=tel] {
   padding-left: 24px;
   padding-right: 24px;
   border-left: solid 1px #f2f2f2;
+}
+
+.new_reservation
+{
+  margin-top: 100px;
 }
