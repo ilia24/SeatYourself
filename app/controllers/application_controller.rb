@@ -14,5 +14,9 @@ private
     session[:user_id] && User.find(session[:user_id])
   end
 
+  def current_user_id
+    session[:user_id]
+  end
+  helper_method :current_user_id
   helper_method :current_user
 end
