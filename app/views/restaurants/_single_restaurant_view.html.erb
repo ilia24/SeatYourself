@@ -326,6 +326,75 @@
 
     </div>
 
+    <div class="reviews_container">
+      <div class="reservations">
+        <!-- <h3> Reservation </h3>
+          <% @restaurant.reservations.each do |reservation| %>
+            <p> Reserved on <%= reservation.date && reservation.date.strftime("%Y-%m-%d")%> from <%= reservation.start_time && reservation.start_time.strftime("%I:%M %p") %> to <%= reservation.end_time && reservation.end_time.strftime("%I:%M %p")  %> </p>
+            <p> <%= link_to 'Edit', edit_restaurant_reservation_path(@restaurant,reservation) %> | <%= link_to 'Cancel', restaurant_reservation_path(@restaurant,reservation), method: :delete, data: {confirm: "Are you sure you want to cancel this reservation?"} %> </p>
+        <% end %>
+          <p><%= link_to "Book now", new_restaurant_reservation_path(@restaurant) %> </p>
+      </div> -->
+
+      <div class= "reviews">
+      <p> REVIEWS <p>
+      <p><% @restaurant.reviews.each do |review| %><p>
+
+        <div class="comment">
+          <%= review.comment %>
+          <br>
+          <br>
+          <div class="user_review_thumbnail">
+            <img src="http://lorempixel.com/40/40" alt="">
+          </div>
+          <div class="user_review_info">
+            <% if review.user != nil %>
+             By: <em><%=review.user.name %> </em>
+             <br>
+             Added on: <%= review.created_at.strftime("%B %dth, %Y %I:%M %p") %>
+             <%end %>
+          </div>
+
+        </div>
+        <hr>
+          </p>
+        <%end%>
+
+        <% if current_user %>
+      <h4> New Review </h4>
+
+      <%= form_for([@restaurant, @review]) do |f| %>
+
+      <% if @review.errors.any? %>
+           <div id="error_explanation">
+             <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+             <ul>
+             <% @review.errors.full_messages.each do |msg| %>
+               <li><%= msg %></li>
+             <% end %>
+             </ul>
+           </div>
+         <% end %>
+
+          <%= f.label :comment %>
+          <br>
+          <%= f.text_area :comment %>
+
+          <p>
+          <%= f.submit %>
+          </p>
+          <% end %>
+
+          <% else %>
+          <p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review
+          </p>
+            <% end %>
+          </div>
+
+    </div>
+
+
   </div>
 
 </div>
