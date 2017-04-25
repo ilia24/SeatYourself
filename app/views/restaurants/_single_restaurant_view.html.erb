@@ -28,9 +28,11 @@
             </div>
           </div>
 
-          <div class="button_book">
-              <%=link_to 'BOOK NOW', new_restaurant_reservation_path(@restaurant) %>
-          </div>
+          <%= link_to restaurant do %>
+            <div class="button_book">
+              BOOK NOW
+            </div>
+          <% end %>
         </div>
       </div>
 
