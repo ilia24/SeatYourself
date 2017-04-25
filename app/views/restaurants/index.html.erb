@@ -2,7 +2,15 @@
     <%= image_tag ("restaurant.png") %>
 </header>
 
+<div class="add_rest_btn_container">
+  <div class="button_reg_white">
+    <%= link_to 'Add a new Restaurant',  new_restaurant_path %>
+  </div>
+</div>
+
+
 <main class="index_main">
+
   <ul id="restaurant_grid">
     <% @restaurants.each do |current_rest| %>
       <li class="restaurant_container">
@@ -14,5 +22,3 @@
 
 
 </main>
-
-<%= link_to 'Add a new Restaurant',  new_restaurant_path %>
