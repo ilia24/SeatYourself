@@ -16,7 +16,7 @@
 <div class = "timeslots">
   <h3> Timeslots </h3>
   <% @restaurant.timeslots.each do |ts| %>
-      <p> Date : <%= ts.start.strftime("%a") %> Start : <%= ts.start.strftime("%I:%M %p") %> End : <%= ts.end.strftime("%I:%M %p") %></p>
+      <p> Date : <%= ts.start.strftime("%b %d %a") %> Start : <%= ts.start.strftime("%I:%M %p") %> End : <%= ts.end.strftime("%I:%M %p") %></p>
   <%end %>
 
 </div>
