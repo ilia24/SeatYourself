@@ -29,7 +29,7 @@
           </div>
 
           <div class="button_book">
-              <a href="#">BOOK NOW</a>
+              <%=link_to 'BOOK NOW', new_restaurant_reservation_path(@restaurant) %>
           </div>
         </div>
       </div>
@@ -54,22 +54,22 @@
       </div>
 
 
-        <!-- <div class="hours">
+        <div class="hours">
             <div class="opening">
               <h3>OPENING TIME</h3>
               <p>
-              <%= restaurant.opentime && restaurant.opentime.strftime("%I:%M %p") %>
+              <%= restaurant.mondayopen && restaurant.mondayopen.strftime("%I:%M %p") %>
               </p>
             </div>
             <span id="hours_to">-</span>
             <div class="closing">
               <h3>CLOSING TIME</h3>
               <p>
-                <%= restaurant.closetime && restaurant.closetime.strftime("%I:%M %p") %>
+                <%= restaurant.mondayclose && restaurant.mondayclose.strftime("%I:%M %p") %>
               </p>
             </div>
 
-          </div> -->
+          </div>
 
 
 

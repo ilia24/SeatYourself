@@ -28,7 +28,22 @@
         <% end %>
 
         <% if current_user %>
-            Signed in as: <%= current_user.name %> <%= link_to 'Log Out', session_path("current"), :method => :delete%>
+          <div class="user_profile_wrapper">
+
+            <div class="user_profile">
+              <%= image_tag ("https://static.pexels.com/photos/127229/pexels-photo-127229.jpeg")%>
+
+              <div class="profile_dropdown">
+                <ul>
+                  <li><%= current_user.name %></li>
+                  <%= link_to session_path("current"), :method => :delete do %>
+                    <li>Logout</li>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+
+          </div>
             <% else %>
             <%= link_to 'LOG IN', new_session_path %>
             <%= link_to 'SIGN UP', new_user_path %>
