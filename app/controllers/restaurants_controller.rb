@@ -22,8 +22,8 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
       @restaurant = Restaurant.new(restaurant_params)
 
       if @restaurant.save
+        
         redirect_to restaurants_url
-
         @restaurant.opentime()
 
         mon = 0
