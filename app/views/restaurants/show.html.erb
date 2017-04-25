@@ -4,8 +4,6 @@
 </p>
 
 <%= render 'single_restaurant_view', restaurant: @restaurant %>
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Delete', restaurant_path(@restaurant), method: :delete, data: {confirm: "Are you sure you want to delete the restaurant #{@restaurant.name}? This cannot be undone!"}%>
 
 <div class = "capacity" >
   <p>

@@ -598,3 +598,51 @@ transition:.5s;
   display: inline-block;
   margin: 0;
 }
+
+.edit_delete_wrapper {
+  width: 718px;
+  height: 38px;
+  margin-bottom: 24px;
+}
+
+.edit_delete {
+  float: left;
+}
+
+.button_edit_delete {
+  position: relative;
+  font-size: 14px;
+  color: #262626;
+  background-color: white;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  float: right;
+  height: 16px;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.button_edit_delete:first-child {
+  padding-left: 0;
+  margin-right: 24px;
+}
+
+.button_edit_delete img {
+  width: 24px;
+  padding-right: 6px;
+}
+/*
+.button_edit_delete:hover {
+  border-bottom: solid 2px #7f7f7f;
+}*/
+
+.button_edit_delete:hover img{
+  width: 28px;
+  -o-transition:.2s;
+-ms-transition:.2s;
+-moz-transition:.2s;
+-webkit-transition:.2s;
+transition:.2s;
+}

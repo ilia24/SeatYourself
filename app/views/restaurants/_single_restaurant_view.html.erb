@@ -2,6 +2,26 @@
 
   <div class= "restaurants_container">
 
+    <div class="edit_delete_wrapper">
+      <div class="edit_delete">
+
+        <%= link_to restaurant_path, method: :delete, data: {confirm: "Are you sure you want to delete the restaurant #{@restaurant.name}? This cannot be undone!"} do %>
+          <div class="button_edit_delete">
+            <%= image_tag ("ic_delete_black_24px.svg") %>
+            DELETE
+          </div>
+        <% end %>
+
+        <%= link_to edit_restaurant_path do %>
+          <div class="button_edit_delete">
+            <%= image_tag ("ic_create_black_24px.svg") %>
+            EDIT
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
     <div class="view_main_container">
 
       <div class= "restaurant_view_image">
