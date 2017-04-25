@@ -9,20 +9,25 @@ class ReservationsController < ApplicationController
 
   def new
     @reservation = Reservation.new
+
   end
 
   def create
-    @reservation = @restaurant.reservations.build(reservation_params)
 
+    @reservation = @restaurant.reservations.build(reservation_params)
     @reservation.user = current_user
-    if @reservation.placeholder(@reservation.start_time, @reservation.end_time, @reservation.group_size, @restaurant.id)
-      if @reservation.save
+
+    # if @reservation.placeholder(@reservation.start_time, @reservation.end_time, @reservation.group_size, @restaurant.id) &&  @reservation.save
+
+
+      if @reservation.placeholder && @reservation.save
+
       redirect_to restaurant_path(@restaurant), notice: 'Reservation booked successfully'
     else
       flash[:error] = 'Reservation not booked successfully'
       render :new
     end
-  end
+
   end
 
   def edit
@@ -31,27 +36,34 @@ class ReservationsController < ApplicationController
 
   def update
     @reservation = Reservation.find(params[:id])
-    if @reservation.update_attributes(reservation_params)
-      redirect_to restaurant_reservation_path(@reservation)
+    @reservation_edit = Reservation.new(reservation_params)
+
+    # if @reservation.edit_reserve(@reservation,reservation_params[:start_time], reservation_params[:end_time], reservation_params[:group_size], @restaurant.id) && @reservation.update_attributes(reservation_params)
+    if @reservation.edit_reserve(@reservation,@reservation_edit) && @reservation.update_attributes(reservation_params)
+      redirect_to restaurant_path(@restaurant)
     else
       render :edit
     end
 
   end
 
-  def destroy
-    @reservation = Reservation.find(params[:id])
-    @reservation.destroy
-    redirect_to restaurant_path
+  def show
 
   end
 
+  def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.cancel_reserve
+    @reservation.destroy
+    redirect_to restaurant_path(@restaurant)
 
+  end
 
   private
   def reservation_params
     params.require(:reservation).permit(:user_id, :restaurant_id, :date, :group_size, :start_time, :end_time)
   end
+
 
   def load_restaurant
    @restaurant = Restaurant.find(params[:restaurant_id])
