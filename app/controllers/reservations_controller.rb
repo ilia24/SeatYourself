@@ -16,7 +16,7 @@ class ReservationsController < ApplicationController
 
     @reservation = @restaurant.reservations.build(reservation_params)
     @reservation.user = current_user
-      if @reservation.placeholder(@reservation) && @reservation.save
+      if @reservation.placeholder && @reservation.save
       redirect_to restaurant_path(@restaurant), notice: 'Reservation booked successfully'
     else
       flash[:error] = 'Reservation not booked successfully'
@@ -32,7 +32,7 @@ class ReservationsController < ApplicationController
   def update
     @reservation = Reservation.find(params[:id])
     @reservation_edit = Reservation.new(reservation_params)
-    byebug
+  
     # if @reservation.edit_reserve(@reservation,reservation_params[:start_time], reservation_params[:end_time], reservation_params[:group_size], @restaurant.id) && @reservation.update_attributes(reservation_params)
     if @reservation.edit_reserve(@reservation,@reservation_edit) && @reservation.update_attributes(reservation_params)
       redirect_to restaurant_path(@restaurant)
@@ -48,6 +48,7 @@ class ReservationsController < ApplicationController
 
   def destroy
     @reservation = Reservation.find(params[:id])
+    @reservation.cancel_reserve
     @reservation.destroy
     redirect_to restaurant_path(@restaurant)
 
