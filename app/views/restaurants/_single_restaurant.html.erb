@@ -3,7 +3,9 @@
   <div class= "restaurants">
 
     <div class= "restaurant_image">
-      <img src="<%="#{restaurant.image_url}"%>">
+      <%= link_to restaurant do %>
+        <img src="<%="#{restaurant.image_url}"%>">
+      <% end %>
     </div>
 
     <div class="restaurant_info">
@@ -18,7 +20,8 @@
           <%= image_tag ("review_stars.svg") %>
           <%= image_tag ("review_stars.svg") %>
         </div>
-        <p>lorem ipsum</p>
+        <p><%= restaurant.cuisine %></p>
+
       </div>
 
         <div class="hours">
@@ -68,9 +71,13 @@
 
           </div>
 
-        <div class="button_book">
-            <%= link_to "BOOK NOW", restaurant %>
-          </div>
+          <%= link_to restaurant do %>
+            <div class="button_book">
+              BOOK NOW
+            </div>
+          <% end %>
+
+
 
     </div>
 

@@ -136,6 +136,28 @@ input[type=tel] {
   border: 0;
 }
 
+.button_reg_white {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 300;
+  color: #262626;
+  background-color: white;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  letter-spacing: 2px;
+  border: solid 2px #262626;
+}
+
+.button_reg_white:hover {
+  background-color: #f2f2f2;
+  -o-transition:.5s;
+-ms-transition:.5s;
+-moz-transition:.5s;
+-webkit-transition:.5s;
+transition:.5s;
+}
+
 .nav_links {
   /*position: absolute;*/
   right: 50px;
@@ -256,12 +278,23 @@ input[type=tel] {
 .button_book {
   position: relative;
   font-size: 14px;
+  color: white;
   background-color: #262626;
   padding: 10px;
   padding-left: 25px;
   padding-right: 25px;
   float: right;
   height: 16px;
+  letter-spacing: 2px;
+}
+
+.button_book:hover {
+  background-color: #595959;
+  -o-transition:.5s;
+-ms-transition:.5s;
+-moz-transition:.5s;
+-webkit-transition:.5s;
+transition:.5s;
 }
 
 .button_book a {
@@ -280,7 +313,17 @@ input[type=tel] {
   padding-left: 40px;
   padding-right: 40px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.16);
+  -o-transition:.5s;
+-ms-transition:.5s;
+-moz-transition:.5s;
+-webkit-transition:.5s;
+transition:.5s;
 }
+
+.button_lg:hover {
+  background-color: #f2f2f2;
+}
+
 
 .button_wrapper {
   justify-content: center;
@@ -359,7 +402,7 @@ input[type=tel] {
 
 .restaurant_container {
   background-color: white;
-  max-width: 1000px;
+  max-width: 1100px;
   height: 204px;
   margin: 0 auto;
 }
@@ -377,6 +420,10 @@ input[type=tel] {
 .restaurant_info {
   display: flex;
   align-items: center;
+}
+
+.index_main {
+  margin-bottom: 100px
 }
 
 .index_main_info {
@@ -447,10 +494,9 @@ input[type=tel] {
 
 .restaurants_view_wrapper {
   max-width: 1200px;
-  margin-left: 100px;
-  margin-right: 100px;
   margin: auto;
   display: flex;
+  margin-top: 100px;
 }
 
 .restaurant_info_wrapper {
@@ -463,9 +509,10 @@ input[type=tel] {
 
 .show_main_info {
   padding: 12px;
-  width: 300px;
+  max-width: 718px;
   background-color: #262626;
   color: white;
+  flex-grow: 1;
 }
 
 .restaurants_container {
@@ -488,6 +535,7 @@ input[type=tel] {
   /*border: solid 1px #95989A;*/
   box-shadow: 0 6px 50px rgba(0, 0, 0, 0.16);
   justify-content: space-between;
+  align-items: center;
 }
 
 .reservation_picker h2 {
@@ -497,6 +545,10 @@ input[type=tel] {
 .book_fields {
   display: flex;
   align-items: center;
+}
+
+.book_fields h2{
+  padding-top: 12px;
 }
 
 .book_guest {
@@ -515,11 +567,132 @@ input[type=tel] {
   border-left: solid 1px #f2f2f2;
 }
 
-.new_reservation
-{
+.restaurant_info .button_book {
+  margin-left: 50px;
+}
+
+.new_reservation {
   margin-top: 100px;
 }
 
-.edit_reservation {
-  margin-top: 100px;
+
+.add_rest_btn_container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
 }
+
+.add_rest_btn_container .button_reg_white{
+  margin-top: 50px;
+}
+
+.add_rest_btn_container .button_reg_white a{
+  color: #262626;
+}
+
+.add_rest_btn_container h2 {
+  display: inline-block;
+  font-weight: 400;
+}
+
+.add_rest_btn_container p {
+  display: inline-block;
+  margin: 0;
+}
+
+.edit_delete_wrapper {
+  width: 718px;
+  height: 38px;
+  margin-bottom: 24px;
+}
+
+.edit_delete {
+  float: left;
+}
+
+.button_edit_delete {
+  position: relative;
+  font-size: 14px;
+  color: #262626;
+  background-color: white;
+  padding: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  float: right;
+  height: 16px;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.button_edit_delete:first-child {
+  padding-left: 0;
+  margin-right: 24px;
+}
+
+.button_edit_delete img {
+  width: 24px;
+  padding-right: 6px;
+}
+/*
+.button_edit_delete:hover {
+  border-bottom: solid 2px #7f7f7f;
+}*/
+
+.button_edit_delete:hover img{
+  width: 28px;
+  -o-transition:.2s;
+-ms-transition:.2s;
+-moz-transition:.2s;
+-webkit-transition:.2s;
+transition:.2s;
+}
+
+.info_content_container {
+  margin-bottom: 24px;
+}
+
+.info_content_container img{
+  width: 12px;
+}
+
+.icon_container {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+}
+
+.side_info {
+  display: flex;
+  font-family: "Gotham";
+  font-weight: 200;
+}
+
+.corresponding_info {
+  padding-left: 12px;
+}
+
+.corresponding_info p {
+  font-weight: 500;
+  margin: 0;
+}
+
+.days {
+  display: inline-block;
+}
+
+.hours {
+  display: inline-block;
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 24px;
+}
+
+.info_content_wrapper {
+  margin-top: 36px;
+}
+
+/*.show_main_info p {
+  margin-bottom: 36px;
+}*/
