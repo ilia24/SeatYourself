@@ -1,22 +1,43 @@
-<h1> Edit a reservation </h1>
+<h1> Edit this reservation </h1>
 
 <% if current_user %>
 
 <%= form_for([@restaurant, @reservation]) do |f| %>
+
+<% if @reservation.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@reservation.errors.count, "error") %> prohibited this edit from being saved:</h2>
+
+    <ul>
+    <% @reservation.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <p>
 <%= f.label :date %>
-<%= f.date_field :date %>
+<%= f.date_select :date, { start_year: 2017, order: [:day, :month, :year]} %>
 </p>
 
 <p>
-<%= f.label :time %>
-<%= f.time_field :time %>
+From
+<% f.label :start_time %>
+<%= f.time_select :start_time, {ampm: true, minute_step: 30, :default => {:hour => '19', :minute => '30'}} %>
+to
+<% f.label :end_time%>
+<%= f.time_select :end_time, {ampm:true, minute_step: 30, :default => {:hour => '20', :minute => '30'}}  %>
 </p>
 
 <p>
-  <%= f.submit 'Save your edits' %>
+<%= f.label :group_size %>
+<%= f.number_field :group_size, min: 1,step:1 %>
 </p>
-<%end%>
 
+    <p>
+      <%= f.submit 'Save edit!' %>
+    </p>
+  <%end%>
 
 <% end %>

@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   resources :sessions, only: %i(new create destroy)
 
   resources :restaurants do
-    resources :reservations, only: %i(new show create edit destroy)
+    resources :reservations, only: %i(new show create edit update destroy)
 
     resources :reviews, only: %i(show create destroy)
 
 
   end
-  
+
 end
