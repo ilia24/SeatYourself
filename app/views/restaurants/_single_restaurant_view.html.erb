@@ -48,7 +48,7 @@
             </div>
           </div>
 
-          <%= link_to restaurant do %>
+          <%= link_to new_restaurant_reservation_path(@restaurant) do %>
             <div class="button_book">
               BOOK NOW
             </div>
@@ -93,35 +93,141 @@
               </div>
               <div class="corresponding_info">
                 <p>Hours of Operation</p>
+                <% e = Time.now.strftime("%A") %>
                 <div class="days">
+
+                  <% if e=="Monday" %>
+                  <strong>Monday</strong>
+                  <br>
+                  <% else %>
                   Monday
                   <br>
+                  <%end%>
+
+                  <% if e=="Tuesday" %>
+                  <strong>Tuesday</strong>
+                  <br>
+                  <% else %>
                   Tuesday
                   <br>
+                  <%end%>
+
+                  <% if e=="Wednesday" %>
+                  <strong>Wednesday</strong>
+                  <br>
+                  <% else %>
                   Wednesday
                   <br>
+                  <%end%>
+
+                  <% if e=="Thursday" %>
+                  <strong>Thursday</strong>
+                  <br>
+                  <% else %>
                   Thursday
                   <br>
+                  <%end%>
+
+                  <% if e=="Friday" %>
+                  <strong>Friday</strong>
+                  <br>
+                  <% else %>
                   Friday
                   <br>
+                  <%end%>
+
+                  <% if e=="Saturday" %>
+                  <strong>Saturday</strong>
+                  <br>
+                  <% else %>
                   Saturday
                   <br>
+                  <%end%>
+
+                  <% if e=="Sunday" %>
+                  <strong>Sunday</strong>
+                  <br>
+                  <% else %>
                   Sunday
+                  <br>
+                  <%end%>
+
                 </div>
                 <div class="hours">
+                  <% f = Time.now.strftime("%A") %>
+
+                  <%if f=="Monday" %>
+                  <strong>
+                  <%= restaurant.mondayopen.strftime("%I:%M %p") %> - <%= restaurant.mondayclose.strftime("%I:%M %p") %>
+                 </strong>
+                  <br>
+                  <%else%>
                   <%= restaurant.mondayopen.strftime("%I:%M %p") %> - <%= restaurant.mondayclose.strftime("%I:%M %p") %>
                   <br>
+                  <%end%>
+
+                  <%if f=="Tuesday" %>
+                  <strong>
+                  <%= restaurant.tuesdayopen.strftime("%I:%M %p") %> - <%= restaurant.tuesdayclose.strftime("%I:%M %p") %>
+                </strong>
+                 <br>
+                 <%else%>
                   <%= restaurant.tuesdayopen.strftime("%I:%M %p") %> - <%= restaurant.tuesdayclose.strftime("%I:%M %p") %>
                   <br>
+                  <%end%>
+
+
+
+                  <%if f=="Wednesday" %>
+                  <strong>
+                  <%= restaurant.wednesdayopen.strftime("%I:%M %p") %> - <%= restaurant.wednesdayclose.strftime("%I:%M %p") %>
+                </strong>
+                  <br>
+                  <%else%>
                   <%= restaurant.wednesdayopen.strftime("%I:%M %p") %> - <%= restaurant.wednesdayclose.strftime("%I:%M %p") %>
                   <br>
+                  <%end%>
+
+                  <%if f=="Thursday" %>
+                  <strong>
                   <%= restaurant.thursdayopen.strftime("%I:%M %p") %> - <%= restaurant.thursdayclose.strftime("%I:%M %p") %>
+                </strong>
                   <br>
+                  <%else%>
+                    <%= restaurant.thursdayopen.strftime("%I:%M %p") %> - <%= restaurant.thursdayclose.strftime("%I:%M %p") %>
+                  <br>
+                  <%end%>
+
+                  <%if f=="Friday" %>
+                  <strong>
                   <%= restaurant.fridayopen.strftime("%I:%M %p") %> - <%= restaurant.fridayclose.strftime("%I:%M %p") %>
+                 </strong>
                   <br>
+                  <%else%>
+                    <%= restaurant.fridayopen.strftime("%I:%M %p") %> - <%= restaurant.fridayclose.strftime("%I:%M %p") %>
+                  <br>
+                  <%end%>
+
+                  <%if f=="Saturday" %>
+                  <strong>
+                  <%= restaurant.saturdayopen.strftime("%I:%M %p") %> - <%= restaurant.saturdayclose.strftime("%I:%M %p") %>
+                </strong>
+                  <br>
+                  <%else%>
                   <%= restaurant.saturdayopen.strftime("%I:%M %p") %> - <%= restaurant.saturdayclose.strftime("%I:%M %p") %>
                   <br>
+                  <%end%>
+
+                  <%if f=="Sunday" %>
+                  <strong>
                   <%= restaurant.sundayopen.strftime("%I:%M %p") %> - <%= restaurant.sundayclose.strftime("%I:%M %p") %>
+                  </strong>
+                  <br>
+                  <%else%>
+                  <%= restaurant.sundayopen.strftime("%I:%M %p") %> - <%= restaurant.sundayclose.strftime("%I:%M %p") %>
+                  <br>
+                  <%end%>
+
                 </div>
               </div>
             </div>
