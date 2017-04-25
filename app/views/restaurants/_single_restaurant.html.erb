@@ -25,14 +25,44 @@
             <div class="opening">
               <h3>OPENING TIME</h3>
               <p>
-              <%= restaurant.mondayopen && restaurant.mondayopen.strftime("%I:%M %p") %>
+                <% c = Time.now.strftime("%A") %>
+                <% if c== "Monday" %>
+                      <%= restaurant.mondayopen && restaurant.mondayopen.strftime("%I:%M %p") %>
+                <% elsif c== "Tuesday" %>
+                      <%= restaurant.tuesdayopen && restaurant.tuesdayopen.strftime("%I:%M %p") %>
+                <% elsif c== "Wednesday" %>
+                      <%= restaurant.wednesdayopen && restaurant.wednesdayopen.strftime("%I:%M %p") %>
+                <% elsif c== "Thursday" %>
+                      <%= restaurant.thursdayopen && restaurant.thursdayopen.strftime("%I:%M %p") %>
+                <% elsif c== "Friday" %>
+                      <%= restaurant.fridayopen && restaurant.fridayopen.strftime("%I:%M %p") %>
+                <% elsif c== "Saturday" %>
+                      <%= restaurant.saturdayopen && restaurant.saturdayopen.strftime("%I:%M %p") %>
+                <% elsif c== "Sunday" %>
+                      <%= restaurant.sundayopen && restaurant.sundayopen.strftime("%I:%M %p") %>
+                <%end%>
               </p>
             </div>
             <span id="hours_to">-</span>
             <div class="closing">
               <h3>CLOSING TIME</h3>
               <p>
-                <%= restaurant.mondayclose && restaurant.mondayclose.strftime("%I:%M %p") %>
+                <% d = Time.now.strftime("%A") %>
+                <% if d== "Monday" %>
+                      <%= restaurant.mondayclose && restaurant.mondayclose.strftime("%I:%M %p") %>
+                <% elsif d== "Tuesday" %>
+                      <%= restaurant.tuesdayclose && restaurant.tuesdayclose.strftime("%I:%M %p") %>
+                <% elsif d== "Wednesday" %>
+                      <%= restaurant.wednesdayclose && restaurant.wednesdayclose.strftime("%I:%M %p") %>
+                <% elsif d== "Thursday" %>
+                      <%= restaurant.thursdayclose && restaurant.thursdayclose.strftime("%I:%M %p") %>
+                <% elsif d== "Friday" %>
+                      <%= restaurant.fridayclose && restaurant.fridayclose.strftime("%I:%M %p") %>
+                <% elsif d== "Saturday" %>
+                      <%= restaurant.saturdayclose && restaurant.saturdayclose.strftime("%I:%M %p") %>
+                <% elsif d== "Sunday" %>
+                      <%= restaurant.sundayclose && restaurant.sundayclose.strftime("%I:%M %p") %>
+                <%end%>
               </p>
             </div>
 
