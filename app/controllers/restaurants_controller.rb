@@ -65,6 +65,39 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
           Timeslot.create(@restaurant.fridayopen + wday[5], @restaurant.fridayclose + wday[5], @restaurant.capacity, @restaurant.id)
           Timeslot.create(@restaurant.saturdayopen + wday[6], @restaurant.saturdayclose + wday[6], @restaurant.capacity, @restaurant.id)
 
+
+
+
+
+
+          tday = [0,0,0,0,0,0,0]
+          weekday = Time.now.wday #weekday rolls from 0-6 sunday being 0
+          weekvar = 0
+          count = 1 #count is linked to weekday, but 1 day off so being 1-7
+        while count <= 14 do
+          dayadjust = 86400
+          tday[weekday] = 0
+          dayadjust *= count
+          tday[weekday] += (dayadjust + weekvar)
+          weekday += 1
+          dayname = (Time.now + dayadjust).strftime("%A").downcase
+          puts dayname
+          Timeslot.create(@restaurant.send("#{dayname}open") + tday[weekday], @restaurant.sundayclose + wday[0], @restaurant.capacity, @restaurant.id)
+          count += 1
+          if weekday > 6
+            weekday = 0
+          end
+          if count == (count % 7 == 0)
+            weekvar += 604800
+          end
+        end
+
+
+
+
+
+
+
       else
         render :new
       end
