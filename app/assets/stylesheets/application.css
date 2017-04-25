@@ -136,6 +136,19 @@ input[type=tel] {
   border: 0;
 }
 
+.button_reg_white {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 300;
+  color: #262626;
+  background-color: white;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  letter-spacing: 2px;
+  border: solid 2px #262626;
+}
+
 .nav_links {
   /*position: absolute;*/
   right: 50px;
@@ -379,6 +392,10 @@ input[type=tel] {
   align-items: center;
 }
 
+.index_main {
+  margin-bottom: 100px
+}
+
 .index_main_info {
   padding-left: 24px;
   width: 250px;
@@ -520,6 +537,23 @@ input[type=tel] {
   border-left: solid 1px #f2f2f2;
 }
 
-.restaurant_info .button_book{
+.restaurant_info .button_book {
   margin-left: 50px;
+}
+
+.new_reservation {
+  margin-top: 100px;
+}
+
+.add_rest_btn_container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.add_rest_btn_container .button_reg_white{
+  margin-top: 50px;
+}
+
+.add_rest_btn_container .button_reg_white a{
+  color: #262626;
 }

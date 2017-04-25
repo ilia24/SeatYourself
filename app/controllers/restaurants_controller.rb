@@ -88,6 +88,7 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
       @restaurant = Restaurant.find(params[:id])
       @restaurant.destroy
       redirect_to restaurants_url
+
     end
 
   private
