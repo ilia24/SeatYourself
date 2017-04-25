@@ -22,49 +22,33 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
       @restaurant = Restaurant.new(restaurant_params)
 
       if @restaurant.save
-        redirect_to restaurants_url
 
-        mon = 0
-        tues = 0
-        weds = 0
-        thurs = 0
-        fri = 0
-        sat = 0
-        sun = 0
-        wday = [mon, tues, weds, thurs, fri, sat, sun]
-         if (Time.now.strftime("%u").to_i) == 7
-           counter = 1
-            (0..(Time.now.strftime("%u").to_i - 1)).each do |i|
-              dayadjust = 86400
-              dayadjust *= counter
-              wdayvar = wday[i] += dayadjust
-              wday[i] = wdayvar
-              counter += 1
-            end
-         else
-           counter = 1
-            ((Time.now.strftime("%u").to_i)..6).each do |i|
-            dayadjust = 86400
-            dayadjust *= counter
-            wday[i] += dayadjust
-            counter += 1
-          end
-            (0..(Time.now.strftime("%u").to_i - 1)).each do |i|
-            dayadjust = 86400
-            dayadjust *= counter
-            wday[i] += dayadjust
-            counter += 1
-          end
+        tday = [0,0,0,0,0,0,0]
+        weekday = Time.now.wday #weekday rolls from 0-6 sunday being 0
+        weekvar = 0
+        count = 0 #count is linked to weekday, but 1 day off so being 1-7
+      while count <= 6 do
+        dayadjust = 86400
+        if weekday > 6
+          weekday = 0
         end
-
-          Timeslot.create(@restaurant.sundayopen + wday[0], @restaurant.sundayclose + wday[0], @restaurant.capacity, @restaurant.id)
-          Timeslot.create(@restaurant.mondayopen + wday[1], @restaurant.mondayclose + wday[1], @restaurant.capacity, @restaurant.id)
-          Timeslot.create(@restaurant.tuesdayopen + wday[2], @restaurant.tuesdayclose + wday[2], @restaurant.capacity, @restaurant.id)
-          Timeslot.create(@restaurant.wednesdayopen + wday[3], @restaurant.wednesdayclose + wday[3], @restaurant.capacity, @restaurant.id)
-          Timeslot.create(@restaurant.thursdayopen + wday[4], @restaurant.thursdayclose + wday[4], @restaurant.capacity, @restaurant.id)
-          Timeslot.create(@restaurant.fridayopen + wday[5], @restaurant.fridayclose + wday[5], @restaurant.capacity, @restaurant.id)
-          Timeslot.create(@restaurant.saturdayopen + wday[6], @restaurant.saturdayclose + wday[6], @restaurant.capacity, @restaurant.id)
-
+        tday[weekday] = 0
+        dayadjust *= count
+        tday[weekday] += (dayadjust + weekvar)
+        if count % 6 == 0 && count != 0
+          Timeslot.create(@restaurant.sundayopen + tday[0], @restaurant.sundayclose + tday[0], @restaurant.capacity, @restaurant.id)
+          Timeslot.create(@restaurant.mondayopen + tday[1], @restaurant.mondayclose + tday[1], @restaurant.capacity, @restaurant.id)
+          Timeslot.create(@restaurant.tuesdayopen + tday[2], @restaurant.tuesdayclose + tday[2], @restaurant.capacity, @restaurant.id)
+          Timeslot.create(@restaurant.wednesdayopen + tday[3], @restaurant.wednesdayclose + tday[3], @restaurant.capacity, @restaurant.id)
+          Timeslot.create(@restaurant.thursdayopen + tday[4], @restaurant.thursdayclose + tday[4], @restaurant.capacity, @restaurant.id)
+          Timeslot.create(@restaurant.fridayopen + tday[5], @restaurant.fridayclose + tday[5], @restaurant.capacity, @restaurant.id)
+          Timeslot.create(@restaurant.saturdayopen + tday[6], @restaurant.saturdayclose + tday[6], @restaurant.capacity, @restaurant.id)
+          weekvar += 604800
+        end
+        weekday += 1
+        count += 1
+      end
+        redirect_to restaurant_url(@restaurant)
       else
         render :new
       end
