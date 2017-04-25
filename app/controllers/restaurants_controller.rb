@@ -48,7 +48,7 @@ before_action :ensure_logged_in, only:[:create, :new, :edit, :update, :destroy]
         weekday += 1
         count += 1
       end
-        redirect_to restaurants_url
+        redirect_to restaurant_url(@restaurant)
       else
         render :new
       end
