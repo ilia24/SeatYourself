@@ -17,12 +17,16 @@ class ReservationsController < ApplicationController
     @reservation = @restaurant.reservations.build(reservation_params)
     @reservation.user = current_user
 
-      if @reservation.placeholder && @reservation.save
 
-      redirect_to restaurant_path(@restaurant), notice: 'Reservation booked successfully'
+    if @reservation.placeholder && @reservation.save
+
+
+      redirect_to restaurant_path(@restaurant)
+      flash[:notice] = 'Reservation booked successfully'
     else
       flash[:error] = 'Reservation not booked successfully'
       render :new
+
     end
 
   end

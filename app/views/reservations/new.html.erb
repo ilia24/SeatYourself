@@ -25,12 +25,14 @@
 </p>
 
 <p>
+
 From
 <% f.label :start_time %>
-<%= f.time_select :start_time, { ampm: true, minute_step: 30,  :default => {:hour => '19', :minute => '30'}} %>
+    <%= f.time_select :start_time, { start_hour: @restaurant.mondayopen.strftime("%H").to_i, end_hour: @restaurant.mondayclose.strftime("%H").to_i,  ampm: true, minute_step: 30,  :default => {:hour => '19', :minute => '30'}} %>
+
 to
 <% f.label :end_time%>
-<%= f.time_select :end_time, { ampm:true, minute_step: 30, :default => {:hour => '20', :minute => '30'}}  %>
+<%= f.time_select :end_time, { start_hour: @restaurant.mondayopen.strftime("%H").to_i + 1, end_hour: @restaurant.mondayclose.strftime("%H").to_i,ampm:true, minute_step: 30, :default => {:hour => '20', :minute => '30'}}  %>
 </p>
 
 <p>
