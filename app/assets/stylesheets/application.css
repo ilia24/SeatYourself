@@ -532,7 +532,7 @@ transition:.5s;
 
 .show_main_info {
   padding: 12px;
-  max-width: 718px;
+  max-width: 360px;
   background-color: #262626;
   color: white;
   flex-grow: 1;
@@ -746,4 +746,20 @@ transition:.2s;
 .user_review_info {
   display: inline-block;
   padding-left: 24px;
+}
+
+.reservations_container {
+  clear: left;
+  border: solid 1px #d4d4d4;
+  width: 670px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.reservations {
+  margin-bottom: 26px;
+}
+
+.reservtions_title {
+
 }

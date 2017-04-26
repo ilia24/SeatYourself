@@ -12,21 +12,8 @@
   </p>
 </div> -->
 
-<div class="reservations">
 
-  <h3> Reservation </h3>
-    <% @restaurant.reservations.each do |reservation| %>
-
-      <p> Reserved on <%= reservation.date && reservation.date.strftime("%B %dth, %Y")%> from <%= reservation.start_time && reservation.start_time.strftime("%I:%M %p") %> to <%= reservation.end_time && reservation.end_time.strftime("%I:%M %p")  %> for <%= reservation.group_size %> people </p>
-      <% if current_user_id == reservation.user_id %>
-        <p> <%= link_to 'Edit', edit_restaurant_reservation_path(@restaurant,reservation) %> | <%= link_to 'Cancel', restaurant_reservation_path(@restaurant,reservation), method: :delete, data: {confirm: "Are you sure you want to cancel this reservation?"} %> </p>
-      <% end %>
-
-  <% end %>
-    <p><%= link_to "Book now", new_restaurant_reservation_path(@restaurant) %> </p>
-</div>
-
-<div class= "reviews">
+<!-- <div class= "reviews">
 <h3> Reviews </h3>
 <p> Reviews for <%= @restaurant.name %>
   <% @restaurant.reviews.each do |review| %>
@@ -70,4 +57,4 @@
     <p> Please <%= link_to 'Log In', new_session_path %> or <%= link_to 'Sign Up', new_user_path%> to add a review
     </p>
       <% end %>
-    </div>
+    </div> -->
